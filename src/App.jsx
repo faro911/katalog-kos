@@ -6,6 +6,7 @@ import Facilities from './components/Facilities';
 import LocationRules from './components/LocationRules';
 import Footer from './components/Footer';
 import RoomModal from './components/RoomModal';
+import NotFoundKos from './components/NotFoundKos';
 import { getActiveKost, buatLinkWa } from './data/kostData';
 import { MessageCircle } from 'lucide-react';
 
@@ -26,8 +27,15 @@ export default function App() {
   useEffect(() => {
     if (currentKost?.nama) {
       document.title = `${currentKost.nama} - Katalog & Booking Kamar`;
+    } else {
+      document.title = 'Katalog Kos Tidak Ditemukan';
     }
   }, [currentKost]);
+
+  // Jika tidak ada path kos yang valid (misal buka root / atau path salah)
+  if (!currentKost) {
+    return <NotFoundKos />;
+  }
 
   const isRose = currentKost.temaWarna === 'rose';
 

@@ -371,8 +371,8 @@ export function getActiveKost(customPath = null) {
     if (sub.includes('hanida')) return databaseKos.hanida2;
   }
 
-  // Default fallback: Kost Putri Hanida 2
-  return databaseKos.hanida2;
+  // Jika tanpa path atau path tidak dikenal, kembalikan null
+  return null;
 }
 
 // Format Rupiah Helper
