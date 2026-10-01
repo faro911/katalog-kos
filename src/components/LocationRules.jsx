@@ -89,7 +89,7 @@ export default function LocationRules({ kost }) {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-gray-900">Alamat Lengkap:</p>
-                  <p className="text-xs text-gray-600 line-clamp-1">{kost.alamat}</p>
+                  <p className="text-xs text-gray-600 leading-relaxed">{kost.alamat}</p>
                 </div>
               </div>
               <a

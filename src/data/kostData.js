@@ -348,7 +348,7 @@ export const databaseKos = {
     // Kontak Pengelola (Sesuai spanduk pagar: 085 800 409 062)
     whatsapp: '6285800409062',
     alamat: 'Jl. Candi Pawon Tengah No.41, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
-    googleMapsUrl: 'https://maps.google.com/?q=Jl.+Candi+Pawon+Tengah+No.41+Semarang',
+    googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Jl.+Candi+Pawon+Tengah+No.41,+Kalipancur,+Kec.+Ngaliyan,+Kota+Semarang',
 
     // Statistik Cepat
     stats: {
