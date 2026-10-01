@@ -15,8 +15,8 @@ export const databaseKos = {
     rating: 4.9,
     totalUlasan: 27,
     
-    // Kontak Pengelola (Nomor real Google Maps)
-    whatsapp: '6282172772420',
+    // Kontak Pengelola
+    whatsapp: '6285725802480',
     alamat: 'Jl. Candi Pawon Tengah No.3, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
     googleMapsUrl: 'https://maps.app.goo.gl/H51eaiRMzdFxTH1i9',
 
@@ -181,8 +181,8 @@ export const databaseKos = {
     rating: 4.8,
     totalUlasan: 19,
     
-    // Kontak Pengelola (Sesuai link WA https://maps.app.goo.gl/oVZVA1wSLFNtfJuy6)
-    whatsapp: '62823940977134',
+    // Kontak Pengelola
+    whatsapp: '6283869714498',
     alamat: 'Jl. Candi Pawon Tim. Jl. Raya Panjangan, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
     googleMapsUrl: 'https://maps.app.goo.gl/i8nsrjymHde2DUEY9',
 
