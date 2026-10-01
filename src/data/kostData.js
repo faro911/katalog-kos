@@ -8,6 +8,7 @@ export const databaseKos = {
   // 1. KOST PUTRI HANIDA 2 (SEMARANG - SAMPANGAN / BENDAN DHUWUR)
   hanida: {
     id: 'hanida',
+    status: 'TOLAK', // Status: TOLAK (akses path otomatis dinonaktifkan)
     nama: 'Kost Putri Hanida 2',
     tipe: 'Khusus Putri (Mahasiswi & Karyawati)',
     tagline: 'Hunian Khusus Putri yang Nyaman, Bersih, dan Tenang di Area Kalipancur - Ngaliyan Semarang',
@@ -174,6 +175,7 @@ export const databaseKos = {
   // 2. KOST KEDUA: KOST HARLEY (KALIPANCUR - PASUTRI & CAMPUR)
   harley: {
     id: 'harley',
+    status: 'AKTIF', // Status: AKTIF
     nama: 'Kost Harley (Pasutri & Campur)',
     tipe: 'Pasutri (Suami Istri), Putra, & Putri',
     tagline: 'Hunian Kost Nyaman, Tenang, dan Bersih untuk Pasutri, Karyawan & Mahasiswa di Kalipancur Semarang',
@@ -338,6 +340,7 @@ export const databaseKos = {
   // 3. KOST KETIGA: KOST BU BROTO (JL. CANDI PAWON TENGAH NO. 41 KALIPANCUR)
   bubroto: {
     id: 'bubroto',
+    status: 'AKTIF', // Status: AKTIF
     nama: 'Kost Bu Broto',
     tipe: 'Putra / Putri (Kamar Mandi Dalam & Luar)',
     tagline: 'Hunian Kost Bersih, Tenang, dan Terjangkau di Jl. Candi Pawon Tengah No. 41 Kalipancur',
@@ -454,40 +457,69 @@ databaseKos.kostbubroto = databaseKos.bubroto;
 
 /**
  * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto)
+ * Jika properti memiliki status 'TOLAK', maka otomatis ditolak & tidak bisa dibuka (return null)
  */
 export function getActiveKost(customPath = null) {
-  if (typeof window === 'undefined') return databaseKos.hanida2;
+  let matched = null;
 
   // 1. Cek parameter query ?kos=xxx
-  const urlParams = new URLSearchParams(window.location.search);
-  const paramSlug = urlParams.get('kos');
+  const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
+  const paramSlug = urlParams ? urlParams.get('kos') : null;
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (clean.includes('broto')) return databaseKos.bubroto;
-    if (clean.includes('harley')) return databaseKos.harley;
-    if (clean.includes('hanida')) return databaseKos.hanida2;
+    if (clean.includes('broto')) matched = databaseKos.bubroto;
+    else if (clean.includes('harley')) matched = databaseKos.harley;
+    else if (clean.includes('hanida')) matched = databaseKos.hanida2;
   }
 
   // 2. Cek path URL misal /hanida2, /harley, /bubroto
-  const rawPath = customPath !== null ? customPath : window.location.pathname;
-  const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
-  if (pathSlug) {
-    if (pathSlug.includes('broto')) return databaseKos.bubroto;
-    if (pathSlug.includes('harley')) return databaseKos.harley;
-    if (pathSlug.includes('hanida')) return databaseKos.hanida2;
+  if (!matched && typeof window !== 'undefined') {
+    const rawPath = customPath !== null ? customPath : window.location.pathname;
+    const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (pathSlug) {
+      if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
+      else if (pathSlug.includes('harley')) matched = databaseKos.harley;
+      else if (pathSlug.includes('hanida')) matched = databaseKos.hanida2;
+    }
   }
 
   // 3. Cek subdomain
-  const hostnameParts = window.location.hostname.split('.');
-  if (hostnameParts.length > 2) {
-    const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (sub.includes('broto')) return databaseKos.bubroto;
-    if (sub.includes('harley')) return databaseKos.harley;
-    if (sub.includes('hanida')) return databaseKos.hanida2;
+  if (!matched && typeof window !== 'undefined') {
+    const hostnameParts = window.location.hostname.split('.');
+    if (hostnameParts.length > 2) {
+      const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
+      if (sub.includes('broto')) matched = databaseKos.bubroto;
+      else if (sub.includes('harley')) matched = databaseKos.harley;
+      else if (sub.includes('hanida')) matched = databaseKos.hanida2;
+    }
   }
 
-  // Jika tanpa path atau path tidak dikenal, kembalikan null
+  // JIKA STATUS KOS ADALAH 'TOLAK', OTOMATIS TIDAK BISA DIBUKA!
+  if (matched && matched.status === 'TOLAK') {
+    return null;
+  }
+
+  return matched;
+}
+
+/**
+ * Cek apakah URL yang sedang dikunjungi adalah kos yang ditolak
+ */
+export function checkIfCurrentPathRejected() {
+  if (typeof window === 'undefined') return null;
+  const rawPath = (window.location.pathname + window.location.search).toLowerCase();
+  if (rawPath.includes('hanida') && databaseKos.hanida?.status === 'TOLAK') {
+    return databaseKos.hanida;
+  }
   return null;
+}
+
+/**
+ * Mengambil daftar kos yang statusnya AKTIF untuk ditampilkan di rekomendasi
+ */
+export function getActiveKostsList() {
+  const list = [databaseKos.harley, databaseKos.bubroto];
+  return list.filter((item) => item && item.status === 'AKTIF');
 }
 
 // Format Rupiah Helper

@@ -1,7 +1,11 @@
 import React from 'react';
-import { Building2, ArrowRight, ShieldCheck, SearchX } from 'lucide-react';
+import { Building2, ArrowRight, ShieldCheck, SearchX, Ban } from 'lucide-react';
+import { checkIfCurrentPathRejected, getActiveKostsList } from '../data/kostData';
 
 export default function NotFoundKos() {
+  const rejectedKos = checkIfCurrentPathRejected();
+  const activeKosts = getActiveKostsList();
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-gray-50 flex flex-col justify-between text-gray-900 font-sans selection:bg-gray-900 selection:text-white">
       {/* Top Simple Brand Header */}
@@ -15,8 +19,12 @@ export default function NotFoundKos() {
               Katalog Properti Kos
             </span>
           </div>
-          <span className="text-xs text-gray-500 font-medium bg-gray-100 px-2.5 py-1 rounded-full">
-            Status: Menunggu Path Kos
+          <span className={`text-xs font-semibold px-2.5 py-1 rounded-full ${
+            rejectedKos 
+              ? 'bg-rose-100 text-rose-700' 
+              : 'bg-gray-100 text-gray-600'
+          }`}>
+            {rejectedKos ? 'Status: Akses Dinonaktifkan' : 'Status: Menunggu Path Kos'}
           </span>
         </div>
       </header>
@@ -26,76 +34,66 @@ export default function NotFoundKos() {
         <div className="max-w-md w-full bg-white rounded-3xl p-8 sm:p-10 border border-gray-200/80 shadow-xl shadow-gray-200/50 text-center space-y-6">
           
           {/* Visual Icon Badge */}
-          <div className="mx-auto w-16 h-16 rounded-2xl bg-rose-50 border border-rose-100 flex items-center justify-center text-rose-500 shadow-sm animate-pulse">
-            <SearchX className="w-8 h-8" />
+          <div className={`mx-auto w-16 h-16 rounded-2xl flex items-center justify-center shadow-sm ${
+            rejectedKos 
+              ? 'bg-rose-50 border border-rose-200 text-rose-600' 
+              : 'bg-amber-50 border border-amber-200 text-amber-600 animate-pulse'
+          }`}>
+            {rejectedKos ? <Ban className="w-8 h-8" /> : <SearchX className="w-8 h-8" />}
           </div>
 
           {/* Heading */}
           <div className="space-y-2">
             <h1 className="text-2xl sm:text-3xl font-extrabold text-gray-900 tracking-tight">
-              Katalog Kos Tidak Ditemukan
+              {rejectedKos ? 'Katalog Tidak Tersedia' : 'Katalog Kos Tidak Ditemukan'}
             </h1>
             <p className="text-sm text-gray-500 leading-relaxed">
-              Tautan yang Anda tuju belum menyertakan nama kos yang terdaftar. Pastikan membuka tautan dengan format <span className="font-semibold text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded">/nama-kos</span> yang diberikan oleh pengelola.
+              {rejectedKos ? (
+                <>
+                  Mohon maaf, akses katalog digital untuk <span className="font-semibold text-gray-900">{rejectedKos.nama}</span> saat ini telah dinonaktifkan (Status: <span className="font-bold text-rose-600">DITOLAK</span>). Halaman ini tidak lagi dapat dibuka untuk umum.
+                </>
+              ) : (
+                <>
+                  Tautan yang Anda tuju belum menyertakan nama kos yang terdaftar. Pastikan membuka tautan dengan format <span className="font-semibold text-gray-800 bg-gray-100 px-1.5 py-0.5 rounded">/nama-kos</span> yang diberikan oleh pengelola.
+                </>
+              )}
             </p>
           </div>
 
-          {/* Available Demos Quick Links */}
+          {/* Available Demos Quick Links (HANYA PROPERTI AKTIF) */}
           <div className="pt-4 border-t border-gray-100 text-left space-y-3">
             <p className="text-xs font-bold text-gray-400 uppercase tracking-wider text-center">
-              Pilihan Katalog yang Aktif:
+              Pilihan Katalog yang Sedang Aktif:
             </p>
 
-            <a
-              href="/hanida2"
-              className="group flex items-center justify-between p-3.5 rounded-2xl bg-rose-50/60 border border-rose-100 hover:border-rose-300 hover:bg-rose-50 transition-all"
-            >
-              <div>
-                <span className="text-xs font-bold text-rose-700 block">
-                  Kost Putri Hanida 2
-                </span>
-                <span className="text-[11px] text-gray-500">
-                  Kalipancur, Ngaliyan (Khusus Putri)
-                </span>
-              </div>
-              <span className="w-8 h-8 rounded-xl bg-white text-rose-600 flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform">
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </a>
+            {activeKosts.map((kos) => {
+              const isHarley = kos.id === 'harley';
+              const path = isHarley ? '/harley' : '/bubroto';
+              const badgeStyle = isHarley 
+                ? 'bg-emerald-50/60 border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 text-emerald-800' 
+                : 'bg-blue-50/60 border-blue-100 hover:border-blue-300 hover:bg-blue-50 text-blue-800';
+              const arrowColor = isHarley ? 'text-emerald-700' : 'text-blue-700';
 
-            <a
-              href="/harley"
-              className="group flex items-center justify-between p-3.5 rounded-2xl bg-emerald-50/60 border border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 transition-all"
-            >
-              <div>
-                <span className="text-xs font-bold text-emerald-800 block">
-                  Kost Harley
-                </span>
-                <span className="text-[11px] text-gray-500">
-                  Kalipancur (Pasutri & Campur)
-                </span>
-              </div>
-              <span className="w-8 h-8 rounded-xl bg-white text-emerald-700 flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform">
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </a>
-
-            <a
-              href="/bubroto"
-              className="group flex items-center justify-between p-3.5 rounded-2xl bg-blue-50/60 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition-all"
-            >
-              <div>
-                <span className="text-xs font-bold text-blue-800 block">
-                  Kost Bu Broto
-                </span>
-                <span className="text-[11px] text-gray-500">
-                  Jl. Candi Pawon Tengah No. 41 (Putra/Putri)
-                </span>
-              </div>
-              <span className="w-8 h-8 rounded-xl bg-white text-blue-700 flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform">
-                <ArrowRight className="w-4 h-4" />
-              </span>
-            </a>
+              return (
+                <a
+                  key={kos.id}
+                  href={path}
+                  className={`group flex items-center justify-between p-3.5 rounded-2xl border transition-all ${badgeStyle}`}
+                >
+                  <div>
+                    <span className="text-xs font-bold block">
+                      {kos.nama}
+                    </span>
+                    <span className="text-[11px] text-gray-500">
+                      {kos.alamat.split(',')[0]} ({kos.tipe})
+                    </span>
+                  </div>
+                  <span className={`w-8 h-8 rounded-xl bg-white flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform ${arrowColor}`}>
+                    <ArrowRight className="w-4 h-4" />
+                  </span>
+                </a>
+              );
+            })}
           </div>
 
           {/* Secure Trust Note */}
