@@ -333,15 +333,127 @@ export const databaseKos = {
       'Dilarang merokok di dalam kamar ber-AC.',
       'Pembayaran sewa dilakukan tepat waktu setiap tanggal 1–5 di awal masa sewa.',
     ],
+  },
+
+  // 3. KOST KETIGA: KOST BU BROTO (JL. CANDI PAWON TENGAH NO. 41 KALIPANCUR)
+  bubroto: {
+    id: 'bubroto',
+    nama: 'Kost Bu Broto',
+    tipe: 'Putra / Putri (Kamar Mandi Dalam & Luar)',
+    tagline: 'Hunian Kost Bersih, Tenang, dan Terjangkau di Jl. Candi Pawon Tengah No. 41 Kalipancur',
+    temaWarna: 'blue', // nuansa biru / amber
+    rating: 4.8,
+    totalUlasan: 14,
+    
+    // Kontak Pengelola (Sesuai spanduk pagar: 085 800 409 062)
+    whatsapp: '6285800409062',
+    alamat: 'Jl. Candi Pawon Tengah No.41, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
+    googleMapsUrl: 'https://maps.google.com/?q=Jl.+Candi+Pawon+Tengah+No.41+Semarang',
+
+    // Statistik Cepat
+    stats: {
+      totalKamar: 10,
+      kamarTersedia: 2,
+      jarakKampus: '1 Menit ke Mart & Kuliner',
+      kecepatanWifi: '50 Mbps Fiber',
+    },
+
+    // Fasilitas Bersama Kost Bu Broto
+    fasilitasUmum: [
+      { nama: 'Dapur Bersama', icon: 'Utensils', desc: 'Fasilitas memasak harian, kompor gas & wastafel cuci piring' },
+      { nama: 'Parkir Motor Aman di Pagar', icon: 'Car', desc: 'Area parkir motor di dalam pagar gerbang beratap' },
+      { nama: 'Wi-Fi Internet Cepat', icon: 'Wifi', desc: 'Akses Wi-Fi lancar untuk kebutuhan nugas dan kerja' },
+      { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dan lancar sepanjang hari' },
+      { nama: 'Akses Gerbang Mandiri', icon: 'Key', desc: 'Akses keluar masuk mandiri dengan kunci gerbang' },
+      { nama: 'Tempat Cuci & Jemuran', icon: 'Shirt', desc: 'Area mencuci dan jemur pakaian yang leluasa' },
+    ],
+
+    // Daftar Kamar Kost Bu Broto (2 Tipe Saja: Tanpa AC, Rentang 500rb - 800rb)
+    kamar: [
+      {
+        id: 'broto-km-dalam',
+        nama: 'Tipe 1: Kamar Mandi Dalam (Kipas Angin)',
+        kategori: 'non-ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3 x 3.5 Meter',
+        hargaBulan: 750000,
+        hargaTahun: 8200000,
+        status: 'Tersedia',
+        sisaKamar: 2,
+        gambarUtama: 'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop',
+        galeri: [
+          'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=800&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=800&auto=format&fit=crop',
+        ],
+        fasilitasKamar: [
+          'Kamar Mandi Dalam Bersih (Shower & Kloset)',
+          'Kipas Angin Dinding',
+          'Kasur Busa Tebal Singlebed + Bantal',
+          'Lemari Pakaian Kayu',
+          'Meja Belajar Minimalis & Kursi',
+          'Jendela Ventilasi Udara Baik',
+        ],
+        biayaLain: 'Termasuk air bersih dan Wi-Fi. Pemakaian listrik standar laptop/HP sudah termasuk.',
+      },
+      {
+        id: 'broto-km-luar',
+        nama: 'Tipe 2: Kamar Mandi Luar (Pilihan Hemat)',
+        kategori: 'non-ac',
+        tipeKm: 'KM Luar',
+        ukuran: '3 x 3 Meter',
+        hargaBulan: 550000,
+        hargaTahun: 6000000,
+        status: 'Penuh',
+        sisaKamar: 0,
+        gambarUtama: 'https://images.unsplash.com/photo-1540518614846-7ede433c4550?q=80&w=800&auto=format&fit=crop',
+        galeri: [
+          'https://images.unsplash.com/photo-1540518614846-7ede433c4550?q=80&w=800&auto=format&fit=crop',
+        ],
+        fasilitasKamar: [
+          'Kamar Mandi Luar Bersih (Rasio 1 KM untuk 2 Kamar)',
+          'Kipas Angin Dinding',
+          'Kasur Singlebed Nyaman',
+          'Lemari Pakaian',
+          'Meja Belajar & Kursi',
+          'Ventilasi Jendela Kamar',
+        ],
+        biayaLain: 'Pilihan paling hemat! All-in sudah termasuk air, listrik standar, dan Wi-Fi.',
+      },
+    ],
+
+    // Tempat Strategis Sekitar Jl. Candi Pawon Tengah No. 41
+    lokasiTerdekat: [
+      { nama: 'Minimarket (Indomaret / Alfamart Kalipancur & ATM)', jarak: '1–2 Menit (400 m)', icon: 'ShoppingBag' },
+      { nama: 'Sentra Kuliner, Kafe & Warung Makan Kalipancur', jarak: '2 Menit (500 m)', icon: 'UtensilsCrossed' },
+      { nama: 'SDN Kalipancur 01/02 & SD IT Insan Mulia', jarak: '2 Menit (500 m)', icon: 'School' },
+      { nama: 'SMP IT Insan Cendekia & SMP Negeri 19 Semarang', jarak: '3–4 Menit (900 m)', icon: 'BookOpen' },
+      { nama: 'SMA Negeri 7 Semarang & SMK Islamic Centre', jarak: '3–4 Menit (1.0 km)', icon: 'School' },
+      { nama: 'Klinik Pratama & Apotek 24 Jam Kalipancur', jarak: '3 Menit (900 m)', icon: 'HeartPulse' },
+      { nama: 'Kawasan Industri Candi (KIC) & Manyaran', jarak: '7 Menit (3.5 km)', icon: 'Compass' },
+      { nama: 'Kampus UNWAHAS / Sampangan', jarak: '8 Menit (3.9 km)', icon: 'GraduationCap' },
+      { nama: 'Pintu Gerbang Tol Manyaran', jarak: '5 Menit (2.4 km)', icon: 'Train' },
+    ],
+
+    // Peraturan Umum Kost Bu Broto
+    peraturan: [
+      'Akses gerbang mandiri (harap selalu menutup & mengunci kembali gerbang demi keamanan bersama).',
+      'Tamu lawan jenis dilarang menginap di dalam kamar.',
+      'Batas jam bertamu maksimal pukul 21.00 WIB.',
+      'Dilarang merokok di area tertutup dan dilarang membawa miras / obat terlarang.',
+      'Menjaga kebersihan dapur bersama dan ketenangan lingkungan setelah pukul 22.00 WIB.',
+      'Pembayaran sewa tepat waktu di awal bulan sewa.',
+    ],
   }
 };
 
 // Aliases agar semua variasi penulisan URL cocok
 databaseKos.hanida2 = databaseKos.hanida;
 databaseKos.kostharley = databaseKos.harley;
+databaseKos.broto = databaseKos.bubroto;
+databaseKos.kostbubroto = databaseKos.bubroto;
 
 /**
- * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley)
+ * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto)
  */
 export function getActiveKost(customPath = null) {
   if (typeof window === 'undefined') return databaseKos.hanida2;
@@ -351,14 +463,16 @@ export function getActiveKost(customPath = null) {
   const paramSlug = urlParams.get('kos');
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (clean.includes('broto')) return databaseKos.bubroto;
     if (clean.includes('harley')) return databaseKos.harley;
     if (clean.includes('hanida')) return databaseKos.hanida2;
   }
 
-  // 2. Cek path URL misal /hanida2 atau /harley
+  // 2. Cek path URL misal /hanida2, /harley, /bubroto
   const rawPath = customPath !== null ? customPath : window.location.pathname;
   const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
   if (pathSlug) {
+    if (pathSlug.includes('broto')) return databaseKos.bubroto;
     if (pathSlug.includes('harley')) return databaseKos.harley;
     if (pathSlug.includes('hanida')) return databaseKos.hanida2;
   }
@@ -367,6 +481,7 @@ export function getActiveKost(customPath = null) {
   const hostnameParts = window.location.hostname.split('.');
   if (hostnameParts.length > 2) {
     const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
+    if (sub.includes('broto')) return databaseKos.bubroto;
     if (sub.includes('harley')) return databaseKos.harley;
     if (sub.includes('hanida')) return databaseKos.hanida2;
   }

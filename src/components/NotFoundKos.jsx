@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import { Building2, ArrowRight, ShieldCheck, SearchX } from 'lucide-react';
 
 export default function NotFoundKos() {
@@ -76,6 +76,23 @@ export default function NotFoundKos() {
                 </span>
               </div>
               <span className="w-8 h-8 rounded-xl bg-white text-emerald-700 flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform">
+                <ArrowRight className="w-4 h-4" />
+              </span>
+            </a>
+
+            <a
+              href="/bubroto"
+              className="group flex items-center justify-between p-3.5 rounded-2xl bg-blue-50/60 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition-all"
+            >
+              <div>
+                <span className="text-xs font-bold text-blue-800 block">
+                  Kost Bu Broto
+                </span>
+                <span className="text-[11px] text-gray-500">
+                  Jl. Candi Pawon Tengah No. 41 (Putra/Putri)
+                </span>
+              </div>
+              <span className="w-8 h-8 rounded-xl bg-white text-blue-700 flex items-center justify-center shadow-xs group-hover:translate-x-0.5 transition-transform">
                 <ArrowRight className="w-4 h-4" />
               </span>
             </a>
