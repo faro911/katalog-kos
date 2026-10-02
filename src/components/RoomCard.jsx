@@ -78,7 +78,7 @@ export default function RoomCard({ kamar, kost, onOpenDetail }) {
 
           {/* Key Amenities Preview */}
           <div className="mt-4 pt-3.5 border-t border-gray-100 space-y-2">
-            {kamar.fasilitasKamar.slice(0, 4).map((fasil, index) => (
+            {(kamar.fasilitasKamar || []).slice(0, 4).map((fasil, index) => (
               <div key={index} className="flex items-center gap-2 text-xs text-gray-600">
                 <Check className={`w-3.5 h-3.5 shrink-0 ${isRose ? 'text-rose-500' : 'text-emerald-500'}`} />
                 <span className="line-clamp-1">{fasil}</span>

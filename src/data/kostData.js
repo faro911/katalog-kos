@@ -488,50 +488,49 @@ export const databaseKos = {
     kamar: [
       {
         id: 'sunflower-eksklusif-ac',
-        nama: 'Tipe Eksklusif AC (Kamar Mandi Dalam)',
+        nama: 'Tipe 1: Eksklusif AC + KM Dalam',
         kategori: 'ac',
         tipeKm: 'KM Dalam',
         ukuran: '3.5 x 4 Meter',
-        harga: 1350000,
-        hargaFormat: 'Rp 1.350.000',
-        periode: '/ bulan',
+        hargaBulan: 1350000,
+        hargaTahun: 14850000,
         status: 'Tersedia',
-        populer: true,
-        deskripsi: 'Kamar eksklusif ber-AC ukuran luas dengan kamar mandi dalam pribadi kloset duduk & shower. Sangat cocok untuk mahasiswa UNIKA/UNWAHAS atau karyawan yang mengutamakan privasi dan kenyamanan.',
-        foto: [
+        sisaKamar: 2,
+        gambarUtama: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+        galeri: [
           'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
           'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
           'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
         ],
-        fasilitas: [
+        fasilitasKamar: [
           'AC (Air Conditioner) Dingin & Hemat Listrik',
           'Kamar Mandi Dalam Pribadi (Kloset Duduk & Shower)',
           'Kasur Springbed Single/Queen Empuk + Bantal Sprei',
           'Lemari Pakaian Kayu 2 Pintu',
-          'Meja Kerja / Belajar & Kursi',
+          'Meja Kerja / Belajar & Kursi Nyaman',
           'Smart TV / TV Kamar',
           'Cermin Rias & Gantungan Baju',
           'Stopkontak Dekat Kasur & Jendela Sirkulasi Udara Bagus',
         ],
+        biayaLain: 'Termasuk air bersih PDAM, Wi-Fi fiber cepat, dan kebersihan. Listrik token mandiri tiap kamar.',
       },
       {
         id: 'sunflower-standar-kipas',
-        nama: 'Tipe Reguler (Kipas Angin + KM Dalam)',
+        nama: 'Tipe 2: Reguler Kipas + KM Dalam',
         kategori: 'non-ac',
         tipeKm: 'KM Dalam',
         ukuran: '3 x 3.5 Meter',
-        harga: 850000,
-        hargaFormat: 'Rp 850.000',
-        periode: '/ bulan',
-        status: 'Sisa 1 Kamar',
-        populer: false,
-        deskripsi: 'Pilihan hemat dengan kamar mandi dalam pribadi dan ventilasi udara alami yang sejuk. Sangat cocok untuk mahasiswa yang ingin hemat biaya tanpa antre kamar mandi.',
-        foto: [
+        hargaBulan: 850000,
+        hargaTahun: 9350000,
+        status: 'Tersedia',
+        sisaKamar: 1,
+        gambarUtama: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+        galeri: [
           'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
           'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
           'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
         ],
-        fasilitas: [
+        fasilitasKamar: [
           'Kamar Mandi Dalam Pribadi (Kloset & Ember/Shower)',
           'Kipas Angin Dinding (Wall Fan) Sejuk',
           'Kasur Busa Tebal Single Empuk + Bantal Sprei',
@@ -540,15 +539,16 @@ export const databaseKos = {
           'Jendela Sirkulasi Menghadap Area Terbuka',
           'Stopkontak & Lampu Penerangan Terang',
         ],
+        biayaLain: 'Pilihan paling hemat! Termasuk air bersih, Wi-Fi fiber, dan listrik pemakaian standar.',
       },
     ],
 
-    // Lokasi & Akses Sekitar (Sampangan - Gajahmungkur)
-    lokasiSekitar: [
+    // Tempat Strategis Sekitar Jl. Gunung Talang No. 29 (Sampangan - Gajahmungkur)
+    lokasiTerdekat: [
       { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.1 km)', icon: 'GraduationCap' },
       { nama: 'Kampus UNWAHAS Sampangan Menoreh Raya', jarak: '4 Menit (1.5 km)', icon: 'GraduationCap' },
       { nama: 'Pasar Sampangan & Sentra Kuliner Menoreh', jarak: '3 Menit (1.2 km)', icon: 'UtensilsCrossed' },
-      { nama: 'Superindo & Indomaret/Alfamart Sampangan', jarak: '2 Menit (600 m)', icon: 'Building2' },
+      { nama: 'Superindo & Indomaret/Alfamart Sampangan', jarak: '2 Menit (600 m)', icon: 'ShoppingBag' },
       { nama: 'Kampus UNNES Sekaran Gunungpati', jarak: '8–10 Menit (4.5 km)', icon: 'GraduationCap' },
       { nama: 'RSUP Dr. Kariadi Semarang', jarak: '7 Menit (3.8 km)', icon: 'HeartPulse' },
       { nama: 'Simpang Lima / Pusat Kota Semarang', jarak: '10–12 Menit (5.5 km)', icon: 'Compass' },

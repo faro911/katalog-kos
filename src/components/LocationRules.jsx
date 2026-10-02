@@ -52,7 +52,7 @@ export default function LocationRules({ kost }) {
 
             {/* List of nearby spots */}
             <div className="space-y-3">
-              {kost.lokasiTerdekat.map((item, index) => {
+              {(kost.lokasiTerdekat || []).map((item, index) => {
                 const IconComponent = iconLocationMap[item.icon] || MapPin;
                 return (
                   <div

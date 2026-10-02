@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { formatRupiah, buatLinkWa } from '../data/kostData';
 import { X, Check, MessageCircle, Maximize2, Info, ChevronLeft, ChevronRight } from 'lucide-react';
 
@@ -132,7 +132,7 @@ export default function RoomModal({ kamar, kost, onClose }) {
                 Fasilitas Lengkap Kamar Ini:
               </h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {kamar.fasilitasKamar.map((item, idx) => (
+                {(kamar.fasilitasKamar || []).map((item, idx) => (
                   <div key={idx} className="flex items-center gap-2.5 text-xs text-gray-700 bg-gray-50 p-2.5 rounded-xl border border-gray-100">
                     <Check className={`w-4 h-4 shrink-0 ${isRose ? 'text-rose-600' : 'text-emerald-600'}`} />
                     <span>{item}</span>
