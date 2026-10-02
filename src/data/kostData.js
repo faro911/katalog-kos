@@ -569,7 +569,7 @@ export const databaseKos = {
   // 5. KOST KELIMA: KOST 43 - KHUSUS PUTRI (JL. KENDENG BARAT III NO. 43 SAMPANGAN)
   kost43: {
     id: 'kost43',
-    status: 'AKTIF',
+    status: 'TOLAK', // Status: TOLAK (akses path otomatis dinonaktifkan)
     nama: 'Kost 43 - Khusus Putri',
     tipe: 'Khusus Putri (Mahasiswi & Karyawati)',
     tagline: 'Hunian Kos Putri Nyaman, Bersih, dan Tenang Dekat Kampus UNWAHAS & UNIKA Sampangan',
@@ -750,6 +750,9 @@ export function getActiveKost(customPath = null) {
 export function checkIfCurrentPathRejected() {
   if (typeof window === 'undefined') return null;
   const rawPath = (window.location.pathname + window.location.search).toLowerCase();
+  if (rawPath.includes('43') && databaseKos.kost43?.status === 'TOLAK') {
+    return databaseKos.kost43;
+  }
   if (rawPath.includes('hanida') && databaseKos.hanida?.status === 'TOLAK') {
     return databaseKos.hanida;
   }
