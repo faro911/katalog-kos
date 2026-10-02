@@ -80,6 +80,9 @@ export default function NotFoundKos() {
               } else if (kos.id === 'sunflower') {
                 badgeStyle = 'bg-amber-50/60 border-amber-200 hover:border-amber-300 hover:bg-amber-50 text-amber-900';
                 arrowColor = 'text-amber-700';
+              } else if (kos.id === 'kost43') {
+                badgeStyle = 'bg-rose-50/60 border-rose-200 hover:border-rose-300 hover:bg-rose-50 text-rose-800';
+                arrowColor = 'text-rose-700';
               }
 
               return (

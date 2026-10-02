@@ -564,6 +564,122 @@ export const databaseKos = {
       'Menjaga ketenangan lingkungan bersama dan kebersihan fasilitas dapur umum setelah dipakai.',
       'Pembayaran sewa dilakukan tepat waktu setiap awal bulan sewa (tanggal 1–5).',
     ],
+  },
+
+  // 5. KOST KELIMA: KOST 43 - KHUSUS PUTRI (JL. KENDENG BARAT III NO. 43 SAMPANGAN)
+  kost43: {
+    id: 'kost43',
+    status: 'AKTIF',
+    nama: 'Kost 43 - Khusus Putri',
+    tipe: 'Khusus Putri (Mahasiswi & Karyawati)',
+    tagline: 'Hunian Kos Putri Nyaman, Bersih, dan Tenang Dekat Kampus UNWAHAS & UNIKA Sampangan',
+    temaWarna: 'rose', // Nuansa pink / rose anggun
+    rating: 4.8,
+    totalUlasan: 18,
+    
+    // Kontak Pengelola (0856-268-7777)
+    whatsapp: '628562687777',
+    alamat: 'Jl. Kendeng Barat III No. 43, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50236',
+    googleMapsUrl: 'https://maps.app.goo.gl/ooTkCrLD596EUfuM7',
+
+    // Statistik Cepat
+    stats: {
+      totalKamar: 12,
+      kamarTersedia: 2,
+      jarakKampus: '1 Menit ke UNWAHAS Sampangan',
+      kecepatanWifi: '50 Mbps Fiber',
+    },
+
+    // Fasilitas Bersama Kost 43 Putri
+    fasilitasUmum: [
+      { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk kuliah daring, tugas skripsi & streaming' },
+      { nama: 'CCTV & Keamanan Gerbang', icon: 'ShieldCheck', desc: 'Akses gerbang tertib dan aman khusus penghuni putri' },
+      { nama: 'Dapur Bersama Lengkap', icon: 'Utensils', desc: 'Kompor gas, wastafel cuci piring, & dispenser air minum galon' },
+      { nama: 'Kulkas Bersama', icon: 'Coffee', desc: 'Penyimpanan bahan makanan dan minuman dingin penghuni' },
+      { nama: 'Parkir Motor Aman di Dalam', icon: 'Car', desc: 'Area parkir motor tertutup dan berpagar aman dari cuaca' },
+      { nama: 'Area Jemuran & Cuci Luas', icon: 'Shirt', desc: 'Tempat mencuci dan menjemur pakaian leluasa di lantai atas' },
+      { nama: 'Ruang Tamu Depan Khusus', icon: 'Key', desc: 'Area menerima kunjungan orang tua / teman dengan nyaman' },
+      { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
+    ],
+
+    // Daftar Kamar Kost 43 Putri
+    kamar: [
+      {
+        id: 'kost43-ac-km-dalam',
+        nama: 'Tipe 1: AC + Kamar Mandi Dalam',
+        kategori: 'ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3.5 x 3.5 Meter',
+        hargaBulan: 1250000,
+        hargaTahun: 13800000,
+        status: 'Tersedia',
+        sisaKamar: 2,
+        gambarUtama: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'AC (Air Conditioner) Sejuk & Dingin',
+          'Kamar Mandi Dalam Pribadi (Kloset Duduk & Shower)',
+          'Kasur Springbed Single Empuk + Bantal Sprei',
+          'Lemari Pakaian Kayu 2 Pintu',
+          'Meja Belajar Minimalis & Kursi',
+          'Cermin Rias & Gantungan Baju',
+          'Stopkontak & Jendela Sirkulasi Udara Segar',
+        ],
+        biayaLain: 'Sudah termasuk air bersih PDAM, Wi-Fi fiber, dan iuran sampah. Listrik token mandiri.',
+      },
+      {
+        id: 'kost43-kipas-km-dalam',
+        nama: 'Tipe 2: Reguler Kipas + KM Dalam',
+        kategori: 'non-ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3 x 3.5 Meter',
+        hargaBulan: 750000,
+        hargaTahun: 8250000,
+        status: 'Tersedia',
+        sisaKamar: 1,
+        gambarUtama: 'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1555854877-bab0e564b8d5?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'Kamar Mandi Dalam Pribadi Bersih',
+          'Kipas Angin Dinding (Wall Fan) Sejuk',
+          'Kasur Busa Tebal Single Empuk + Bantal',
+          'Lemari Pakaian 2 Pintu',
+          'Meja Belajar & Kursi',
+          'Ventilasi Jendela Kamar Baik',
+          'Stopkontak & Lampu Penerangan Terang',
+        ],
+        biayaLain: 'Pilihan hemat mahasiswi! Sudah termasuk air bersih PDAM, Wi-Fi, dan listrik standar.',
+      },
+    ],
+
+    // Tempat Strategis Sekitar Jl. Kendeng Barat III No. 43 Sampangan
+    lokasiTerdekat: [
+      { nama: 'Kampus UNWAHAS Sampangan (Menoreh)', jarak: '1–2 Menit (350 m - Jalan Kaki)', icon: 'GraduationCap' },
+      { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.0 km)', icon: 'GraduationCap' },
+      { nama: 'Sentra Kuliner & Kafe Menoreh Raya', jarak: '2 Menit (450 m)', icon: 'UtensilsCrossed' },
+      { nama: 'Pasar Sampangan & Superindo', jarak: '3 Menit (800 m)', icon: 'ShoppingBag' },
+      { nama: 'Minimarket (Indomaret / Alfamart Kendeng)', jarak: '1 Menit (200 m)', icon: 'ShoppingBag' },
+      { nama: 'Klinik Pratama & Apotek 24 Jam Sampangan', jarak: '2 Menit (600 m)', icon: 'HeartPulse' },
+      { nama: 'Kampus UNNES Sekaran Gunungpati', jarak: '8 Menit (4.0 km)', icon: 'GraduationCap' },
+      { nama: 'RSUP Dr. Kariadi & Simpang Lima', jarak: '8–10 Menit (4.5 km)', icon: 'Compass' },
+    ],
+
+    // Peraturan Umum Kost 43 Putri
+    peraturan: [
+      'Akses khusus putri demi kenyamanan dan keamanan bersama.',
+      'Tamu pria dilarang masuk ke dalam kamar (hanya boleh di ruang tamu depan).',
+      'Batas jam bertamu maksimal pukul 21.30 WIB.',
+      'Dilarang merokok di dalam area kos dan dilarang membawa miras / obat terlarang.',
+      'Menjaga ketenangan belajar sesama mahasiswi setelah pukul 22.00 WIB.',
+      'Pembayaran sewa tepat waktu setiap awal bulan sewa (tanggal 1–5).',
+    ],
   }
 };
 
@@ -573,9 +689,10 @@ databaseKos.kostharley = databaseKos.harley;
 databaseKos.broto = databaseKos.bubroto;
 databaseKos.kostbubroto = databaseKos.bubroto;
 databaseKos.kostsunflower = databaseKos.sunflower;
+databaseKos['43'] = databaseKos.kost43;
 
 /**
- * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto)
+ * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto, /sunflower, /kost43)
  * Jika properti memiliki status 'TOLAK', maka otomatis ditolak & tidak bisa dibuka (return null)
  */
 export function getActiveKost(customPath = null) {
@@ -586,18 +703,20 @@ export function getActiveKost(customPath = null) {
   const paramSlug = urlParams ? urlParams.get('kos') : null;
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (clean.includes('sunflower')) matched = databaseKos.sunflower;
+    if (clean.includes('43')) matched = databaseKos.kost43;
+    else if (clean.includes('sunflower')) matched = databaseKos.sunflower;
     else if (clean.includes('broto')) matched = databaseKos.bubroto;
     else if (clean.includes('harley')) matched = databaseKos.harley;
     else if (clean.includes('hanida')) matched = databaseKos.hanida2;
   }
 
-  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower
+  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower, /kost43
   if (!matched && typeof window !== 'undefined') {
     const rawPath = customPath !== null ? customPath : window.location.pathname;
     const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (pathSlug) {
-      if (pathSlug.includes('sunflower')) matched = databaseKos.sunflower;
+      if (pathSlug.includes('43')) matched = databaseKos.kost43;
+      else if (pathSlug.includes('sunflower')) matched = databaseKos.sunflower;
       else if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
       else if (pathSlug.includes('harley')) matched = databaseKos.harley;
       else if (pathSlug.includes('hanida')) matched = databaseKos.hanida2;
@@ -609,7 +728,8 @@ export function getActiveKost(customPath = null) {
     const hostnameParts = window.location.hostname.split('.');
     if (hostnameParts.length > 2) {
       const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-      if (sub.includes('sunflower')) matched = databaseKos.sunflower;
+      if (sub.includes('43')) matched = databaseKos.kost43;
+      else if (sub.includes('sunflower')) matched = databaseKos.sunflower;
       else if (sub.includes('broto')) matched = databaseKos.bubroto;
       else if (sub.includes('harley')) matched = databaseKos.harley;
       else if (sub.includes('hanida')) matched = databaseKos.hanida2;
@@ -640,7 +760,7 @@ export function checkIfCurrentPathRejected() {
  * Mengambil daftar kos yang statusnya AKTIF untuk ditampilkan di rekomendasi
  */
 export function getActiveKostsList() {
-  const list = [databaseKos.harley, databaseKos.bubroto, databaseKos.sunflower];
+  const list = [databaseKos.harley, databaseKos.bubroto, databaseKos.sunflower, databaseKos.kost43];
   return list.filter((item) => item && item.status === 'AKTIF');
 }
 
