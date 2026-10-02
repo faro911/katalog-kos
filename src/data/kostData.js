@@ -680,6 +680,122 @@ export const databaseKos = {
       'Menjaga ketenangan belajar sesama mahasiswi setelah pukul 22.00 WIB.',
       'Pembayaran sewa tepat waktu setiap awal bulan sewa (tanggal 1–5).',
     ],
+  },
+
+  // 6. KOST KEENAM: KOST CITRALOKA DUA (JL. MENOREH UTARA III NO. 10 B SAMPANGAN)
+  citraloka: {
+    id: 'citraloka',
+    status: 'AKTIF',
+    nama: 'Kost Citraloka Dua',
+    tipe: 'Campur (Mahasiswa, Karyawan, & Pasutri)',
+    tagline: 'Hunian Kost Modern, Bersih & Nyaman di Jl. Menoreh Utara III No. 10 B, Sampangan Semarang',
+    temaWarna: 'blue',
+    rating: 4.9,
+    totalUlasan: 26,
+    
+    // Kontak Pengelola (0812-2670-3686)
+    whatsapp: '6281226703686',
+    alamat: 'Jl. Menoreh Utara III No. 10 B, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50236',
+    googleMapsUrl: 'https://maps.app.goo.gl/ftsreKeQdpK6EWeP6',
+
+    // Statistik Cepat
+    stats: {
+      totalKamar: 15,
+      kamarTersedia: 2,
+      jarakKampus: '2 Menit ke UNWAHAS & UNIKA',
+      kecepatanWifi: '50 Mbps Fiber',
+    },
+
+    // Fasilitas Bersama Kost Citraloka Dua
+    fasilitasUmum: [
+      { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk nugas kuliah, Zoom meeting, dan WFH' },
+      { nama: 'Akses Gerbang Mandiri 24 Jam', icon: 'Key', desc: 'Bebas jam malam dengan kunci gerbang mandiri yang aman' },
+      { nama: 'CCTV 24 Jam & Keamanan', icon: 'ShieldCheck', desc: 'Lingkungan kos tertib, aman dan selalu termonitor' },
+      { nama: 'Dapur Bersama Lengkap', icon: 'Utensils', desc: 'Fasilitas memasak harian, kompor gas & wastafel cuci piring' },
+      { nama: 'Kulkas Bersama', icon: 'Coffee', desc: 'Penyimpanan bahan makanan dan minuman dingin penghuni' },
+      { nama: 'Parkir Motor Aman di Pagar', icon: 'Car', desc: 'Area parkir motor leluasa di dalam gerbang tertutup' },
+      { nama: 'Tempat Cuci & Jemuran Luas', icon: 'Shirt', desc: 'Area mencuci dan jemur pakaian yang leluasa dan beratap' },
+      { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
+    ],
+
+    // Daftar Kamar Kost Citraloka Dua
+    kamar: [
+      {
+        id: 'citraloka-deluxe-ac',
+        nama: 'Tipe 1: Deluxe AC + KM Dalam',
+        kategori: 'ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3.5 x 4 Meter',
+        hargaBulan: 1200000,
+        hargaTahun: 13200000,
+        status: 'Tersedia',
+        sisaKamar: 2,
+        gambarUtama: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'AC Daikin Dingin & Hemat Listrik',
+          'Kamar Mandi Dalam Pribadi (Kloset Duduk & Shower)',
+          'Kasur Springbed Berkualitas + Bantal Sprei',
+          'Lemari Pakaian Kayu 2 Pintu',
+          'Meja Kerja / Belajar & Kursi',
+          'Jendela Ventilasi Sirkulasi Bagus',
+          'Stopkontak Dekat Kasur & Cermin Rias',
+        ],
+        biayaLain: 'Sudah termasuk air PDAM, Wi-Fi fiber kencang, dan kebersihan. Listrik token mandiri per kamar.',
+      },
+      {
+        id: 'citraloka-reguler-kipas',
+        nama: 'Tipe 2: Reguler Kipas + KM Dalam',
+        kategori: 'non-ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3 x 3.5 Meter',
+        hargaBulan: 800000,
+        hargaTahun: 8800000,
+        status: 'Tersedia',
+        sisaKamar: 1,
+        gambarUtama: 'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'Kamar Mandi Dalam Pribadi Bersih',
+          'Kipas Angin Dinding (Wall Fan) Sejuk',
+          'Kasur Busa Tebal Single Empuk + Bantal',
+          'Lemari Pakaian 2 Pintu',
+          'Meja Belajar & Kursi',
+          'Jendela Sirkulasi Udara Alami',
+          'Stopkontak & Lampu Penerangan Terang',
+        ],
+        biayaLain: 'Pilihan hemat! Sudah termasuk air bersih PDAM, Wi-Fi fiber, dan listrik standar.',
+      },
+    ],
+
+    // Tempat Strategis Sekitar Jl. Menoreh Utara III (Sampangan - Gajahmungkur)
+    lokasiTerdekat: [
+      { nama: 'Taman Sampangan & Kuliner Menoreh Raya', jarak: '1–2 Menit (300 m)', icon: 'UtensilsCrossed' },
+      { nama: 'Kampus UNWAHAS Sampangan', jarak: '2–3 Menit (800 m)', icon: 'GraduationCap' },
+      { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.2 km)', icon: 'GraduationCap' },
+      { nama: 'Kampus UNTAG & UTC Semarang', jarak: '4–5 Menit (1.8 km)', icon: 'GraduationCap' },
+      { nama: 'Pasar Sampangan & Superindo', jarak: '2 Menit (650 m)', icon: 'ShoppingBag' },
+      { nama: 'Pintu Gerbang Tol Jatingaleh', jarak: '6 Menit (3.2 km)', icon: 'Train' },
+      { nama: 'RSUP Dr. Kariadi Semarang', jarak: '6–7 Menit (3.5 km)', icon: 'HeartPulse' },
+      { nama: 'Kawasan Simpang Lima Semarang', jarak: '10 Menit (5.0 km)', icon: 'Compass' },
+    ],
+
+    // Peraturan Umum Kost Citraloka Dua
+    peraturan: [
+      'Akses gerbang mandiri 24 jam (harap selalu menutup & mengunci kembali gerbang demi keamanan bersama).',
+      'Menerima mahasiswa, karyawan, dan pasutri resmi (wajib menyertakan bukti surat nikah).',
+      'Batas jam bertamu di area ruang tamu maksimal pukul 22.00 WIB.',
+      'Dilarang merokok di dalam kamar ber-AC dan dilarang membawa miras / obat terlarang.',
+      'Menjaga ketenangan lingkungan bersama dan kebersihan fasilitas dapur umum setelah dipakai.',
+      'Pembayaran sewa tepat waktu setiap awal bulan sewa (tanggal 1–5).',
+    ],
   }
 };
 
@@ -690,9 +806,11 @@ databaseKos.broto = databaseKos.bubroto;
 databaseKos.kostbubroto = databaseKos.bubroto;
 databaseKos.kostsunflower = databaseKos.sunflower;
 databaseKos['43'] = databaseKos.kost43;
+databaseKos.citralokadua = databaseKos.citraloka;
+databaseKos.kostcitraloka = databaseKos.citraloka;
 
 /**
- * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto, /sunflower, /kost43)
+ * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto, /sunflower, /kost43, /citraloka)
  * Jika properti memiliki status 'TOLAK', maka otomatis ditolak & tidak bisa dibuka (return null)
  */
 export function getActiveKost(customPath = null) {
@@ -703,19 +821,21 @@ export function getActiveKost(customPath = null) {
   const paramSlug = urlParams ? urlParams.get('kos') : null;
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (clean.includes('43')) matched = databaseKos.kost43;
+    if (clean.includes('citraloka')) matched = databaseKos.citraloka;
+    else if (clean.includes('43')) matched = databaseKos.kost43;
     else if (clean.includes('sunflower')) matched = databaseKos.sunflower;
     else if (clean.includes('broto')) matched = databaseKos.bubroto;
     else if (clean.includes('harley')) matched = databaseKos.harley;
     else if (clean.includes('hanida')) matched = databaseKos.hanida2;
   }
 
-  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower, /kost43
+  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower, /kost43, /citraloka
   if (!matched && typeof window !== 'undefined') {
     const rawPath = customPath !== null ? customPath : window.location.pathname;
     const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (pathSlug) {
-      if (pathSlug.includes('43')) matched = databaseKos.kost43;
+      if (pathSlug.includes('citraloka')) matched = databaseKos.citraloka;
+      else if (pathSlug.includes('43')) matched = databaseKos.kost43;
       else if (pathSlug.includes('sunflower')) matched = databaseKos.sunflower;
       else if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
       else if (pathSlug.includes('harley')) matched = databaseKos.harley;
@@ -728,7 +848,8 @@ export function getActiveKost(customPath = null) {
     const hostnameParts = window.location.hostname.split('.');
     if (hostnameParts.length > 2) {
       const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-      if (sub.includes('43')) matched = databaseKos.kost43;
+      if (sub.includes('citraloka')) matched = databaseKos.citraloka;
+      else if (sub.includes('43')) matched = databaseKos.kost43;
       else if (sub.includes('sunflower')) matched = databaseKos.sunflower;
       else if (sub.includes('broto')) matched = databaseKos.bubroto;
       else if (sub.includes('harley')) matched = databaseKos.harley;
@@ -763,7 +884,13 @@ export function checkIfCurrentPathRejected() {
  * Mengambil daftar kos yang statusnya AKTIF untuk ditampilkan di rekomendasi
  */
 export function getActiveKostsList() {
-  const list = [databaseKos.harley, databaseKos.bubroto, databaseKos.sunflower, databaseKos.kost43];
+  const list = [
+    databaseKos.harley,
+    databaseKos.bubroto,
+    databaseKos.sunflower,
+    databaseKos.citraloka,
+    databaseKos.kost43
+  ];
   return list.filter((item) => item && item.status === 'AKTIF');
 }
 
