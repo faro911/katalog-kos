@@ -446,6 +446,124 @@ export const databaseKos = {
       'Menjaga kebersihan dapur bersama dan ketenangan lingkungan setelah pukul 22.00 WIB.',
       'Pembayaran sewa tepat waktu di awal bulan sewa.',
     ],
+  },
+
+  // 4. KOST KEEMPAT: KOST SUNFLOWER (JL. GUNUNG TALANG NO. 29 BENDAN DUWUR / SAMPANGAN)
+  sunflower: {
+    id: 'sunflower',
+    status: 'AKTIF',
+    nama: 'Kost Sunflower Sampangan',
+    tipe: 'Campur (Mahasiswa, Karyawan, & Pasutri)',
+    tagline: 'Hunian Kost Nyaman, Bersih & Strategis di Jl. Gunung Talang No. 29, Sampangan - Gajahmungkur Semarang',
+    temaWarna: 'emerald',
+    rating: 4.9,
+    totalUlasan: 24,
+    
+    // Kontak Pengelola (0882-0081-84716)
+    whatsapp: '62882008184716',
+    alamat: 'Jl. Gunung Talang No. 29, Bendan Duwur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50233',
+    googleMapsUrl: 'https://maps.app.goo.gl/2s43yXrxF3HSbzFR8',
+
+    // Statistik Cepat
+    stats: {
+      totalKamar: 14,
+      kamarTersedia: 2,
+      jarakKampus: '3 Menit ke UNIKA / UNWAHAS',
+      kecepatanWifi: '50 Mbps Fiber',
+    },
+
+    // Fasilitas Bersama Kost Sunflower
+    fasilitasUmum: [
+      { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk tugas kuliah, Zoom meeting, dan WFH' },
+      { nama: 'Akses Gerbang 24 Jam', icon: 'Key', desc: 'Bebas jam malam dengan kunci mandiri gerbang yang aman' },
+      { nama: 'Parkir Mobil & Motor Luas', icon: 'Car', desc: 'Area parkir beratap yang aman di dalam pagar' },
+      { nama: 'Dapur Bersama & Dispenser', icon: 'Utensils', desc: 'Kompor gas, wastafel cuci piring & air galon gratis' },
+      { nama: 'Pengawasan CCTV & Penjaga Kos', icon: 'ShieldCheck', desc: 'Lingkungan tertib, aman dan terjaga sepanjang hari' },
+      { nama: 'Area Cuci & Jemuran Luas', icon: 'Shirt', desc: 'Fasilitas mencuci mandiri dan area jemuran pakaian beratap' },
+      { nama: 'Ruang Tamu Bersama', icon: 'Coffee', desc: 'Tempat santai menerima teman atau keluarga berkunjung' },
+      { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
+    ],
+
+    // Daftar Kamar Kost Sunflower
+    kamar: [
+      {
+        id: 'sunflower-eksklusif-ac',
+        nama: 'Tipe Eksklusif AC (Kamar Mandi Dalam)',
+        kategori: 'ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3.5 x 4 Meter',
+        harga: 1350000,
+        hargaFormat: 'Rp 1.350.000',
+        periode: '/ bulan',
+        status: 'Tersedia',
+        populer: true,
+        deskripsi: 'Kamar eksklusif ber-AC ukuran luas dengan kamar mandi dalam pribadi kloset duduk & shower. Sangat cocok untuk mahasiswa UNIKA/UNWAHAS atau karyawan yang mengutamakan privasi dan kenyamanan.',
+        foto: [
+          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitas: [
+          'AC (Air Conditioner) Dingin & Hemat Listrik',
+          'Kamar Mandi Dalam Pribadi (Kloset Duduk & Shower)',
+          'Kasur Springbed Single/Queen Empuk + Bantal Sprei',
+          'Lemari Pakaian Kayu 2 Pintu',
+          'Meja Kerja / Belajar & Kursi',
+          'Smart TV / TV Kamar',
+          'Cermin Rias & Gantungan Baju',
+          'Stopkontak Dekat Kasur & Jendela Sirkulasi Udara Bagus',
+        ],
+      },
+      {
+        id: 'sunflower-standar-kipas',
+        nama: 'Tipe Reguler (Kipas Angin + KM Dalam)',
+        kategori: 'non-ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3 x 3.5 Meter',
+        harga: 850000,
+        hargaFormat: 'Rp 850.000',
+        periode: '/ bulan',
+        status: 'Sisa 1 Kamar',
+        populer: false,
+        deskripsi: 'Pilihan hemat dengan kamar mandi dalam pribadi dan ventilasi udara alami yang sejuk. Sangat cocok untuk mahasiswa yang ingin hemat biaya tanpa antre kamar mandi.',
+        foto: [
+          'https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitas: [
+          'Kamar Mandi Dalam Pribadi (Kloset & Ember/Shower)',
+          'Kipas Angin Dinding (Wall Fan) Sejuk',
+          'Kasur Busa Tebal Single Empuk + Bantal Sprei',
+          'Lemari Pakaian 2 Pintu',
+          'Meja Belajar & Kursi',
+          'Jendela Sirkulasi Menghadap Area Terbuka',
+          'Stopkontak & Lampu Penerangan Terang',
+        ],
+      },
+    ],
+
+    // Lokasi & Akses Sekitar (Sampangan - Gajahmungkur)
+    lokasiSekitar: [
+      { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.1 km)', icon: 'GraduationCap' },
+      { nama: 'Kampus UNWAHAS Sampangan Menoreh Raya', jarak: '4 Menit (1.5 km)', icon: 'GraduationCap' },
+      { nama: 'Pasar Sampangan & Sentra Kuliner Menoreh', jarak: '3 Menit (1.2 km)', icon: 'UtensilsCrossed' },
+      { nama: 'Superindo & Indomaret/Alfamart Sampangan', jarak: '2 Menit (600 m)', icon: 'Building2' },
+      { nama: 'Kampus UNNES Sekaran Gunungpati', jarak: '8–10 Menit (4.5 km)', icon: 'GraduationCap' },
+      { nama: 'RSUP Dr. Kariadi Semarang', jarak: '7 Menit (3.8 km)', icon: 'HeartPulse' },
+      { nama: 'Simpang Lima / Pusat Kota Semarang', jarak: '10–12 Menit (5.5 km)', icon: 'Compass' },
+      { nama: 'Pintu Gerbang Tol Jatingaleh', jarak: '7 Menit (3.6 km)', icon: 'Train' },
+    ],
+
+    // Peraturan Umum Kost Sunflower
+    peraturan: [
+      'Akses gerbang mandiri 24 jam (harap selalu mengunci kembali gerbang demi keamanan bersama).',
+      'Menerima mahasiswa, karyawan, dan pasutri resmi (wajib menyertakan bukti surat nikah).',
+      'Batas jam bertamu di area ruang tamu maksimal pukul 22.00 WIB.',
+      'Dilarang merokok di dalam kamar ber-AC dan dilarang membawa miras / obat-obatan terlarang.',
+      'Menjaga ketenangan lingkungan bersama dan kebersihan fasilitas dapur umum setelah dipakai.',
+      'Pembayaran sewa dilakukan tepat waktu setiap awal bulan sewa (tanggal 1–5).',
+    ],
   }
 };
 
@@ -454,6 +572,7 @@ databaseKos.hanida2 = databaseKos.hanida;
 databaseKos.kostharley = databaseKos.harley;
 databaseKos.broto = databaseKos.bubroto;
 databaseKos.kostbubroto = databaseKos.bubroto;
+databaseKos.kostsunflower = databaseKos.sunflower;
 
 /**
  * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto)
@@ -467,17 +586,19 @@ export function getActiveKost(customPath = null) {
   const paramSlug = urlParams ? urlParams.get('kos') : null;
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (clean.includes('broto')) matched = databaseKos.bubroto;
+    if (clean.includes('sunflower')) matched = databaseKos.sunflower;
+    else if (clean.includes('broto')) matched = databaseKos.bubroto;
     else if (clean.includes('harley')) matched = databaseKos.harley;
     else if (clean.includes('hanida')) matched = databaseKos.hanida2;
   }
 
-  // 2. Cek path URL misal /hanida2, /harley, /bubroto
+  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower
   if (!matched && typeof window !== 'undefined') {
     const rawPath = customPath !== null ? customPath : window.location.pathname;
     const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (pathSlug) {
-      if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
+      if (pathSlug.includes('sunflower')) matched = databaseKos.sunflower;
+      else if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
       else if (pathSlug.includes('harley')) matched = databaseKos.harley;
       else if (pathSlug.includes('hanida')) matched = databaseKos.hanida2;
     }
@@ -488,7 +609,8 @@ export function getActiveKost(customPath = null) {
     const hostnameParts = window.location.hostname.split('.');
     if (hostnameParts.length > 2) {
       const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-      if (sub.includes('broto')) matched = databaseKos.bubroto;
+      if (sub.includes('sunflower')) matched = databaseKos.sunflower;
+      else if (sub.includes('broto')) matched = databaseKos.bubroto;
       else if (sub.includes('harley')) matched = databaseKos.harley;
       else if (sub.includes('hanida')) matched = databaseKos.hanida2;
     }
@@ -518,7 +640,7 @@ export function checkIfCurrentPathRejected() {
  * Mengambil daftar kos yang statusnya AKTIF untuk ditampilkan di rekomendasi
  */
 export function getActiveKostsList() {
-  const list = [databaseKos.harley, databaseKos.bubroto];
+  const list = [databaseKos.harley, databaseKos.bubroto, databaseKos.sunflower];
   return list.filter((item) => item && item.status === 'AKTIF');
 }
 

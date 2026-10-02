@@ -67,12 +67,20 @@ export default function NotFoundKos() {
             </p>
 
             {activeKosts.map((kos) => {
-              const isHarley = kos.id === 'harley';
-              const path = isHarley ? '/harley' : '/bubroto';
-              const badgeStyle = isHarley 
-                ? 'bg-emerald-50/60 border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 text-emerald-800' 
-                : 'bg-blue-50/60 border-blue-100 hover:border-blue-300 hover:bg-blue-50 text-blue-800';
-              const arrowColor = isHarley ? 'text-emerald-700' : 'text-blue-700';
+              const path = `/${kos.id}`;
+              let badgeStyle = 'bg-amber-50/60 border-amber-200 hover:border-amber-300 hover:bg-amber-50 text-amber-900';
+              let arrowColor = 'text-amber-700';
+
+              if (kos.id === 'harley') {
+                badgeStyle = 'bg-emerald-50/60 border-emerald-100 hover:border-emerald-300 hover:bg-emerald-50 text-emerald-800';
+                arrowColor = 'text-emerald-700';
+              } else if (kos.id === 'bubroto') {
+                badgeStyle = 'bg-blue-50/60 border-blue-100 hover:border-blue-300 hover:bg-blue-50 text-blue-800';
+                arrowColor = 'text-blue-700';
+              } else if (kos.id === 'sunflower') {
+                badgeStyle = 'bg-amber-50/60 border-amber-200 hover:border-amber-300 hover:bg-amber-50 text-amber-900';
+                arrowColor = 'text-amber-700';
+              }
 
               return (
                 <a
