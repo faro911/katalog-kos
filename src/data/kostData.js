@@ -8,20 +8,18 @@ export const databaseKos = {
   // 1. KOST PUTRI HANIDA 2 (SEMARANG - SAMPANGAN / BENDAN DHUWUR)
   hanida: {
     id: 'hanida',
-    status: 'TOLAK', // Status: TOLAK (akses path otomatis dinonaktifkan)
+    status: 'TOLAK',
     nama: 'Kost Putri Hanida 2',
     tipe: 'Khusus Putri (Mahasiswi & Karyawati)',
     tagline: 'Hunian Khusus Putri yang Nyaman, Bersih, dan Tenang di Area Kalipancur - Ngaliyan Semarang',
-    temaWarna: 'rose', // rose / emerald / blue
+    temaWarna: 'rose',
     rating: 4.9,
     totalUlasan: 27,
     
-    // Kontak Pengelola
     whatsapp: '6285725802480',
     alamat: 'Jl. Candi Pawon Tengah No.3, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
     googleMapsUrl: 'https://maps.app.goo.gl/H51eaiRMzdFxTH1i9',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 16,
       kamarTersedia: 4,
@@ -29,7 +27,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Khusus Kost Putri
     fasilitasUmum: [
       { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk tugas kuliah, Zoom meeting, dan streaming' },
       { nama: 'CCTV & Keamanan Gerbang', icon: 'ShieldCheck', desc: 'Akses gerbang tertutup, aman untuk mahasiswi dari orang luar' },
@@ -41,7 +38,6 @@ export const databaseKos = {
       { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon penampung cadangan' },
     ],
 
-    // Daftar Kamar Kost Putri Hanida 2 (Kombinasi AC/Kipas & KM Dalam/Luar: 500rb - 1jt)
     kamar: [
       {
         id: 'hanida-ac-km-dalam',
@@ -148,7 +144,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Kebutuhan Penghuni (Kuliner, Minimarket, Sekolah SD/SMP/SMA, Klinik, Kampus, Kawasan Kerja)
     lokasiTerdekat: [
       { nama: 'Minimarket (Indomaret / Alfamart Kalipancur & ATM)', jarak: '1–2 Menit (400 m)', icon: 'ShoppingBag' },
       { nama: 'Sentra Kuliner, Kafe & Warung Makan Kalipancur', jarak: '2 Menit (500 m)', icon: 'UtensilsCrossed' },
@@ -161,7 +156,6 @@ export const databaseKos = {
       { nama: 'Pintu Gerbang Tol Manyaran', jarak: '5 Menit (2.4 km)', icon: 'Train' },
     ],
 
-    // Peraturan Khusus Kost Putri
     peraturan: [
       'Khusus Putri: Tamu pria (termasuk pacar/teman) HANYA diperkenankan bertamu di ruang tamu depan, dilarang masuk ke lorong/kamar.',
       'Batas jam bertamu maksimal pukul 21.00 WIB demi kenyamanan dan istirahat sesama penghuni.',
@@ -175,20 +169,18 @@ export const databaseKos = {
   // 2. KOST KEDUA: KOST HARLEY (KALIPANCUR - PASUTRI & CAMPUR)
   harley: {
     id: 'harley',
-    status: 'AKTIF', // Status: AKTIF
+    status: 'AKTIF',
     nama: 'Kost Harley (Pasutri & Campur)',
     tipe: 'Pasutri (Suami Istri), Putra, & Putri',
     tagline: 'Hunian Kost Nyaman, Tenang, dan Bersih untuk Pasutri, Karyawan & Mahasiswa di Kalipancur Semarang',
-    temaWarna: 'emerald', // emerald / rose / blue
+    temaWarna: 'emerald',
     rating: 4.8,
     totalUlasan: 19,
     
-    // Kontak Pengelola
     whatsapp: '6283869714498',
     alamat: 'Jl. Candi Pawon Tim. Jl. Raya Panjangan, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
     googleMapsUrl: 'https://maps.app.goo.gl/i8nsrjymHde2DUEY9',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 12,
       kamarTersedia: 3,
@@ -196,7 +188,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Kost Harley
     fasilitasUmum: [
       { nama: 'Wi-Fi Fiber 50 Mbps', icon: 'Wifi', desc: 'Koneksi internet cepat untuk kerja, kuliah & hiburan' },
       { nama: 'Dapur Bersama Lengkap', icon: 'Utensils', desc: 'Kompor gas, tabung gas disediakan, wastafel cuci piring' },
@@ -208,7 +199,6 @@ export const databaseKos = {
       { nama: 'Ruang Santai / Tamu', icon: 'Coffee', desc: 'Area duduk bersama untuk menerima tamu' },
     ],
 
-    // Daftar Kamar Kost Harley (Rentang 500rb - 1jt)
     kamar: [
       {
         id: 'harley-deluxe-pasutri',
@@ -313,7 +303,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Sekitar Kalipancur / Manyaran
     lokasiTerdekat: [
       { nama: 'Minimarket (Indomaret / Alfamart Kalipancur & ATM)', jarak: '1–2 Menit (400 m)', icon: 'ShoppingBag' },
       { nama: 'Sentra Kuliner, Kafe & Warung Makan Kalipancur', jarak: '2 Menit (500 m)', icon: 'UtensilsCrossed' },
@@ -326,7 +315,6 @@ export const databaseKos = {
       { nama: 'Pintu Gerbang Tol Manyaran', jarak: '5 Menit (2.4 km)', icon: 'Train' },
     ],
 
-    // Peraturan Khusus Kost Harley
     peraturan: [
       'Bagi pasangan suami istri (Pasutri), wajib menyerahkan fotokopi Surat Nikah / KTP domisili saat pendaftaran sewa.',
       'Akses gerbang 24 jam dengan kunci mandiri (harap selalu mengunci kembali gerbang demi keamanan bersama).',
@@ -340,20 +328,18 @@ export const databaseKos = {
   // 3. KOST KETIGA: KOST BU BROTO (JL. CANDI PAWON TENGAH NO. 41 KALIPANCUR)
   bubroto: {
     id: 'bubroto',
-    status: 'AKTIF', // Status: AKTIF
+    status: 'AKTIF',
     nama: 'Kost Bu Broto',
     tipe: 'Putra / Putri (Kamar Mandi Dalam & Luar)',
     tagline: 'Hunian Kost Bersih, Tenang, dan Terjangkau di Jl. Candi Pawon Tengah No. 41 Kalipancur',
-    temaWarna: 'blue', // nuansa biru / amber
+    temaWarna: 'blue',
     rating: 4.8,
     totalUlasan: 14,
     
-    // Kontak Pengelola (Sesuai spanduk pagar: 085 800 409 062)
     whatsapp: '6285800409062',
     alamat: 'Jl. Candi Pawon Tengah No.41, Kalipancur, Kec. Ngaliyan, Kota Semarang, Jawa Tengah 50183',
     googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=Jl.+Candi+Pawon+Tengah+No.41,+Kalipancur,+Kec.+Ngaliyan,+Kota+Semarang',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 10,
       kamarTersedia: 2,
@@ -361,7 +347,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Kost Bu Broto
     fasilitasUmum: [
       { nama: 'Dapur Bersama', icon: 'Utensils', desc: 'Fasilitas memasak harian, kompor gas & wastafel cuci piring' },
       { nama: 'Parkir Motor Aman di Pagar', icon: 'Car', desc: 'Area parkir motor di dalam pagar gerbang beratap' },
@@ -371,7 +356,6 @@ export const databaseKos = {
       { nama: 'Tempat Cuci & Jemuran', icon: 'Shirt', desc: 'Area mencuci dan jemur pakaian yang leluasa' },
     ],
 
-    // Daftar Kamar Kost Bu Broto (2 Tipe Saja: Tanpa AC, Rentang 500rb - 800rb)
     kamar: [
       {
         id: 'broto-km-dalam',
@@ -424,7 +408,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Sekitar Jl. Candi Pawon Tengah No. 41
     lokasiTerdekat: [
       { nama: 'Minimarket (Indomaret / Alfamart Kalipancur & ATM)', jarak: '1–2 Menit (400 m)', icon: 'ShoppingBag' },
       { nama: 'Sentra Kuliner, Kafe & Warung Makan Kalipancur', jarak: '2 Menit (500 m)', icon: 'UtensilsCrossed' },
@@ -437,7 +420,6 @@ export const databaseKos = {
       { nama: 'Pintu Gerbang Tol Manyaran', jarak: '5 Menit (2.4 km)', icon: 'Train' },
     ],
 
-    // Peraturan Umum Kost Bu Broto
     peraturan: [
       'Akses gerbang mandiri (harap selalu menutup & mengunci kembali gerbang demi keamanan bersama).',
       'Tamu lawan jenis dilarang menginap di dalam kamar.',
@@ -448,7 +430,7 @@ export const databaseKos = {
     ],
   },
 
-  // 4. KOST KEEMPAT: KOST SUNFLOWER (JL. GUNUNG TALANG NO. 29 BENDAN DUWUR / SAMPANGAN)
+  // 4. KOST KEMPAT: KOST SUNFLOWER (JL. GUNUNG TALANG NO. 29 BENDAN DUWUR / SAMPANGAN)
   sunflower: {
     id: 'sunflower',
     status: 'AKTIF',
@@ -459,12 +441,10 @@ export const databaseKos = {
     rating: 4.9,
     totalUlasan: 24,
     
-    // Kontak Pengelola (0882-0081-84716)
     whatsapp: '62882008184716',
     alamat: 'Jl. Gunung Talang No. 29, Bendan Duwur, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50233',
     googleMapsUrl: 'https://maps.app.goo.gl/2s43yXrxF3HSbzFR8',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 14,
       kamarTersedia: 2,
@@ -472,7 +452,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Kost Sunflower
     fasilitasUmum: [
       { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk tugas kuliah, Zoom meeting, dan WFH' },
       { nama: 'Akses Gerbang 24 Jam', icon: 'Key', desc: 'Bebas jam malam dengan kunci mandiri gerbang yang aman' },
@@ -484,7 +463,6 @@ export const databaseKos = {
       { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
     ],
 
-    // Daftar Kamar Kost Sunflower
     kamar: [
       {
         id: 'sunflower-eksklusif-ac',
@@ -543,7 +521,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Sekitar Jl. Gunung Talang No. 29 (Sampangan - Gajahmungkur)
     lokasiTerdekat: [
       { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.1 km)', icon: 'GraduationCap' },
       { nama: 'Kampus UNWAHAS Sampangan Menoreh Raya', jarak: '4 Menit (1.5 km)', icon: 'GraduationCap' },
@@ -555,7 +532,6 @@ export const databaseKos = {
       { nama: 'Pintu Gerbang Tol Jatingaleh', jarak: '7 Menit (3.6 km)', icon: 'Train' },
     ],
 
-    // Peraturan Umum Kost Sunflower
     peraturan: [
       'Akses gerbang mandiri 24 jam (harap selalu mengunci kembali gerbang demi keamanan bersama).',
       'Menerima mahasiswa, karyawan, dan pasutri resmi (wajib menyertakan bukti surat nikah).',
@@ -569,20 +545,18 @@ export const databaseKos = {
   // 5. KOST KELIMA: KOST 43 - KHUSUS PUTRI (JL. KENDENG BARAT III NO. 43 SAMPANGAN)
   kost43: {
     id: 'kost43',
-    status: 'TOLAK', // Status: TOLAK (akses path otomatis dinonaktifkan)
+    status: 'TOLAK',
     nama: 'Kost 43 - Khusus Putri',
     tipe: 'Khusus Putri (Mahasiswi & Karyawati)',
     tagline: 'Hunian Kos Putri Nyaman, Bersih, dan Tenang Dekat Kampus UNWAHAS & UNIKA Sampangan',
-    temaWarna: 'rose', // Nuansa pink / rose anggun
+    temaWarna: 'rose',
     rating: 4.8,
     totalUlasan: 18,
     
-    // Kontak Pengelola (0856-268-7777)
     whatsapp: '628562687777',
     alamat: 'Jl. Kendeng Barat III No. 43, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50236',
     googleMapsUrl: 'https://maps.app.goo.gl/ooTkCrLD596EUfuM7',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 12,
       kamarTersedia: 2,
@@ -590,7 +564,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Kost 43 Putri
     fasilitasUmum: [
       { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk kuliah daring, tugas skripsi & streaming' },
       { nama: 'CCTV & Keamanan Gerbang', icon: 'ShieldCheck', desc: 'Akses gerbang tertib dan aman khusus penghuni putri' },
@@ -602,7 +575,6 @@ export const databaseKos = {
       { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
     ],
 
-    // Daftar Kamar Kost 43 Putri
     kamar: [
       {
         id: 'kost43-ac-km-dalam',
@@ -659,7 +631,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Sekitar Jl. Kendeng Barat III No. 43 Sampangan
     lokasiTerdekat: [
       { nama: 'Kampus UNWAHAS Sampangan (Menoreh)', jarak: '1–2 Menit (350 m - Jalan Kaki)', icon: 'GraduationCap' },
       { nama: 'Kampus UNIKA Soegijapranata Bendan Dhuwur', jarak: '3 Menit (1.0 km)', icon: 'GraduationCap' },
@@ -671,7 +642,6 @@ export const databaseKos = {
       { nama: 'RSUP Dr. Kariadi & Simpang Lima', jarak: '8–10 Menit (4.5 km)', icon: 'Compass' },
     ],
 
-    // Peraturan Umum Kost 43 Putri
     peraturan: [
       'Akses khusus putri demi kenyamanan dan keamanan bersama.',
       'Tamu pria dilarang masuk ke dalam kamar (hanya boleh di ruang tamu depan).',
@@ -693,12 +663,10 @@ export const databaseKos = {
     rating: 4.9,
     totalUlasan: 26,
     
-    // Kontak Pengelola (0812-2670-3686)
     whatsapp: '6281226703686',
     alamat: 'Jl. Menoreh Utara III No. 10 B, Sampangan, Kec. Gajahmungkur, Kota Semarang, Jawa Tengah 50236',
     googleMapsUrl: 'https://maps.app.goo.gl/ftsreKeQdpK6EWeP6',
 
-    // Statistik Cepat
     stats: {
       totalKamar: 15,
       kamarTersedia: 2,
@@ -706,7 +674,6 @@ export const databaseKos = {
       kecepatanWifi: '50 Mbps Fiber',
     },
 
-    // Fasilitas Bersama Kost Citraloka Dua
     fasilitasUmum: [
       { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk nugas kuliah, Zoom meeting, dan WFH' },
       { nama: 'Akses Gerbang Mandiri 24 Jam', icon: 'Key', desc: 'Bebas jam malam dengan kunci gerbang mandiri yang aman' },
@@ -718,7 +685,6 @@ export const databaseKos = {
       { nama: 'Air Bersih PDAM Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
     ],
 
-    // Daftar Kamar Kost Citraloka Dua
     kamar: [
       {
         id: 'citraloka-deluxe-ac',
@@ -775,7 +741,6 @@ export const databaseKos = {
       },
     ],
 
-    // Tempat Strategis Sekitar Jl. Menoreh Utara III (Sampangan - Gajahmungkur)
     lokasiTerdekat: [
       { nama: 'Taman Sampangan & Kuliner Menoreh Raya', jarak: '1–2 Menit (300 m)', icon: 'UtensilsCrossed' },
       { nama: 'Kampus UNWAHAS Sampangan', jarak: '2–3 Menit (800 m)', icon: 'GraduationCap' },
@@ -787,7 +752,6 @@ export const databaseKos = {
       { nama: 'Kawasan Simpang Lima Semarang', jarak: '10 Menit (5.0 km)', icon: 'Compass' },
     ],
 
-    // Peraturan Umum Kost Citraloka Dua
     peraturan: [
       'Akses gerbang mandiri 24 jam (harap selalu menutup & mengunci kembali gerbang demi keamanan bersama).',
       'Menerima mahasiswa, karyawan, dan pasutri resmi (wajib menyertakan bukti surat nikah).',
@@ -795,6 +759,101 @@ export const databaseKos = {
       'Dilarang merokok di dalam kamar ber-AC dan dilarang membawa miras / obat terlarang.',
       'Menjaga ketenangan lingkungan bersama dan kebersihan fasilitas dapur umum setelah dipakai.',
       'Pembayaran sewa tepat waktu setiap awal bulan sewa (tanggal 1–5).',
+    ],
+  },
+
+  // 7. KOST KETUJUH: KOST MANGGIS (JL. MANGGIS SEMARANG)
+  manggis: {
+    id: 'manggis',
+    status: 'AKTIF',
+    nama: 'Kost Manggis Semarang',
+    tipe: 'Campur (Mahasiswa, Karyawan, & Pasutri)',
+    tagline: 'Hunian Kost Nyaman, Tenang dan Strategis di Area Manggis Semarang',
+    temaWarna: 'amber',
+    rating: 4.8,
+    totalUlasan: 15,
+    
+    whatsapp: '6281234567891',
+    alamat: 'Jl. Manggis, Lamper Kidul, Kec. Semarang Sel., Kota Semarang, Jawa Tengah',
+    googleMapsUrl: 'https://maps.app.goo.gl/jDfkx8FRRb37ViMV6',
+
+    stats: {
+      totalKamar: 12,
+      kamarTersedia: 3,
+      jarakKampus: 'Akses Mudah ke Pusat Kota',
+      kecepatanWifi: '50 Mbps Fiber',
+    },
+
+    fasilitasUmum: [
+      { nama: 'Wi-Fi Fiber Kencang', icon: 'Wifi', desc: 'Internet stabil untuk tugas kuliah, kerja, dan streaming' },
+      { nama: 'Akses Gerbang Mandiri 24 Jam', icon: 'Key', desc: 'Bebas jam malam dengan kunci gerbang mandiri yang aman' },
+      { nama: 'CCTV & Keamanan', icon: 'ShieldCheck', desc: 'Lingkungan kos tertib, aman dan selalu termonitor' },
+      { nama: 'Dapur Bersama Lengkap', icon: 'Utensils', desc: 'Fasilitas memasak harian, kompor gas & wastafel cuci piring' },
+      { nama: 'Parkir Motor Luas', icon: 'Car', desc: 'Area parkir motor aman dan beratap' },
+      { nama: 'Tempat Cuci & Jemuran', icon: 'Shirt', desc: 'Area mencuci dan jemur pakaian yang leluasa' },
+      { nama: 'Air Bersih Lancar', icon: 'Droplets', desc: 'Pasokan air jernih dengan tandon cadangan penampung' },
+    ],
+
+    kamar: [
+      {
+        id: 'manggis-ac-km-dalam',
+        nama: 'Tipe 1: AC + Kamar Mandi Dalam',
+        kategori: 'ac',
+        tipeKm: 'KM Dalam',
+        ukuran: '3.5 x 3.5 Meter',
+        hargaBulan: 1100000,
+        hargaTahun: 12000000,
+        status: 'Tersedia',
+        sisaKamar: 2,
+        gambarUtama: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?auto=format&fit=crop&w=800&q=80',
+          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'AC Hemat Energi',
+          'Kamar Mandi Dalam (Kloset Duduk & Shower)',
+          'Kasur Springbed Single/Queen',
+          'Lemari Pakaian & Meja Belajar',
+          'Ventilasi Udara Baik',
+        ],
+        biayaLain: 'Termasuk air dan Wi-Fi. Listrik token mandiri.',
+      },
+      {
+        id: 'manggis-kipas-km-luar',
+        nama: 'Tipe 2: Kipas Angin + Kamar Mandi Luar',
+        kategori: 'non-ac',
+        tipeKm: 'KM Luar',
+        ukuran: '3 x 3 Meter',
+        hargaBulan: 700000,
+        hargaTahun: 7500000,
+        status: 'Tersedia',
+        sisaKamar: 1,
+        gambarUtama: 'https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80',
+        galeri: [
+          'https://images.unsplash.com/photo-1540518614846-7ede433c4550?auto=format&fit=crop&w=800&q=80',
+        ],
+        fasilitasKamar: [
+          'Kipas Angin Dinding',
+          'Kamar Mandi Luar Bersih',
+          'Kasur Busa & Bantal',
+          'Lemari Pakaian & Meja',
+        ],
+        biayaLain: 'All-in sudah termasuk air, listrik standar, dan Wi-Fi.',
+      },
+    ],
+
+    lokasiTerdekat: [
+      { nama: 'Minimarket Terdekat', jarak: '2 Menit (500 m)', icon: 'ShoppingBag' },
+      { nama: 'Pusat Kuliner Semarang', jarak: '5 Menit', icon: 'UtensilsCrossed' },
+      { nama: 'Klinik / Apotek', jarak: '3 Menit', icon: 'HeartPulse' },
+    ],
+
+    peraturan: [
+      'Akses gerbang mandiri 24 jam (harap selalu mengunci kembali gerbang).',
+      'Menjaga ketenangan dan kebersihan lingkungan kos bersama.',
+      'Dilarang merokok di dalam kamar ber-AC dan membawa barang terlarang.',
+      'Pembayaran sewa tepat waktu setiap awal bulan.',
     ],
   }
 };
@@ -808,20 +867,21 @@ databaseKos.kostsunflower = databaseKos.sunflower;
 databaseKos['43'] = databaseKos.kost43;
 databaseKos.citralokadua = databaseKos.citraloka;
 databaseKos.kostcitraloka = databaseKos.citraloka;
+databaseKos.kostmanggis = databaseKos.manggis;
+databaseKos.manggis = databaseKos.manggis;
 
 /**
- * HELPER: Mendapatkan kos aktif berdasarkan URL path (/hanida2, /harley, /bubroto, /sunflower, /kost43, /citraloka)
- * Jika properti memiliki status 'TOLAK', maka otomatis ditolak & tidak bisa dibuka (return null)
+ * HELPER: Mendapatkan kos aktif berdasarkan URL path
  */
 export function getActiveKost(customPath = null) {
   let matched = null;
 
-  // 1. Cek parameter query ?kos=xxx
   const urlParams = typeof window !== 'undefined' ? new URLSearchParams(window.location.search) : null;
   const paramSlug = urlParams ? urlParams.get('kos') : null;
   if (paramSlug) {
     const clean = paramSlug.toLowerCase().replace(/[^a-z0-9]/g, '');
-    if (clean.includes('citraloka')) matched = databaseKos.citraloka;
+    if (clean.includes('manggis')) matched = databaseKos.manggis;
+    else if (clean.includes('citraloka')) matched = databaseKos.citraloka;
     else if (clean.includes('43')) matched = databaseKos.kost43;
     else if (clean.includes('sunflower')) matched = databaseKos.sunflower;
     else if (clean.includes('broto')) matched = databaseKos.bubroto;
@@ -829,12 +889,12 @@ export function getActiveKost(customPath = null) {
     else if (clean.includes('hanida')) matched = databaseKos.hanida2;
   }
 
-  // 2. Cek path URL misal /hanida2, /harley, /bubroto, /sunflower, /kost43, /citraloka
   if (!matched && typeof window !== 'undefined') {
     const rawPath = customPath !== null ? customPath : window.location.pathname;
     const pathSlug = rawPath.replace(/^\/+|\/+$/g, '').toLowerCase().replace(/[^a-z0-9]/g, '');
     if (pathSlug) {
-      if (pathSlug.includes('citraloka')) matched = databaseKos.citraloka;
+      if (pathSlug.includes('manggis')) matched = databaseKos.manggis;
+      else if (pathSlug.includes('citraloka')) matched = databaseKos.citraloka;
       else if (pathSlug.includes('43')) matched = databaseKos.kost43;
       else if (pathSlug.includes('sunflower')) matched = databaseKos.sunflower;
       else if (pathSlug.includes('broto')) matched = databaseKos.bubroto;
@@ -843,12 +903,12 @@ export function getActiveKost(customPath = null) {
     }
   }
 
-  // 3. Cek subdomain
   if (!matched && typeof window !== 'undefined') {
     const hostnameParts = window.location.hostname.split('.');
     if (hostnameParts.length > 2) {
       const sub = hostnameParts[0].toLowerCase().replace(/[^a-z0-9]/g, '');
-      if (sub.includes('citraloka')) matched = databaseKos.citraloka;
+      if (sub.includes('manggis')) matched = databaseKos.manggis;
+      else if (sub.includes('citraloka')) matched = databaseKos.citraloka;
       else if (sub.includes('43')) matched = databaseKos.kost43;
       else if (sub.includes('sunflower')) matched = databaseKos.sunflower;
       else if (sub.includes('broto')) matched = databaseKos.bubroto;
@@ -857,7 +917,6 @@ export function getActiveKost(customPath = null) {
     }
   }
 
-  // JIKA STATUS KOS ADALAH 'TOLAK', OTOMATIS TIDAK BISA DIBUKA!
   if (matched && matched.status === 'TOLAK') {
     return null;
   }
@@ -889,6 +948,7 @@ export function getActiveKostsList() {
     databaseKos.bubroto,
     databaseKos.sunflower,
     databaseKos.citraloka,
+    databaseKos.manggis,
     databaseKos.kost43
   ];
   return list.filter((item) => item && item.status === 'AKTIF');
