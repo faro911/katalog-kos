@@ -5,9 +5,12 @@
  */
 
 // Model cadangan jika dynamic model discovery tidak dapat diakses
+// Diprioritaskan ke model terbaru Google AI Studio (gemini-3.8-flash & gemini-2.0-flash)
 const FALLBACK_MODELS = [
+  'gemini-3.8-flash',
   'gemini-2.0-flash',
   'gemini-2.0-flash-lite',
+  'gemini-3.8-pro',
   'gemini-1.5-flash-latest',
   'gemini-1.5-flash',
   'gemini-2.0-flash-exp',
@@ -25,12 +28,16 @@ export async function getAvailableGeminiModels(apiKey) {
       const data = await res.json();
       const available = (data.models || [])
         .filter(m => Array.isArray(m.supportedGenerationMethods) && m.supportedGenerationMethods.includes('generateContent'))
-        .map(m => m.name.replace(/^models\//, ''));
+        .map(m => m.name.replace(/^models\//, ''))
+        // Filter model deprecated yang sudah tidak aktif untuk pengguna baru
+        .filter(m => !m.includes('2.5'));
 
       if (available.length > 0) {
         const priorityOrder = [
+          'gemini-3.8-flash',
           'gemini-2.0-flash',
           'gemini-2.0-flash-lite',
+          'gemini-3.8-pro',
           'gemini-1.5-flash-latest',
           'gemini-1.5-flash',
           'gemini-2.0-flash-exp',
@@ -71,30 +78,40 @@ export async function testGeminiConnection(apiKey) {
       return { success: false, message: 'Tidak ada model Gemini yang mendukung generateContent untuk API Key ini.' };
     }
 
-    const testModel = models[0];
-    const testRes = await fetch(
-      `https://generativelanguage.googleapis.com/v1beta/models/${testModel}:generateContent?key=${cleanKey}`,
-      {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          contents: [{ parts: [{ text: 'Halo, balas OK jika terhubung.' }] }]
-        })
-      }
-    );
+    let lastErrorMsg = '';
+    // Coba setiap model yang tersedia sampai menemukan yang sukses
+    for (const testModel of models) {
+      try {
+        const testRes = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${testModel}:generateContent?key=${cleanKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              contents: [{ parts: [{ text: 'Halo, balas OK jika terhubung.' }] }]
+            })
+          }
+        );
 
-    if (!testRes.ok) {
-      const errData = await testRes.json().catch(() => ({}));
-      return { 
-        success: false, 
-        message: errData?.error?.message || `Gagal menghubungi model ${testModel} (Status: ${testRes.status})` 
-      };
+        if (testRes.ok) {
+          return { 
+            success: true, 
+            model: testModel,
+            message: `Terhubung (Model: ${testModel})` 
+          };
+        } else {
+          const errData = await testRes.json().catch(() => ({}));
+          lastErrorMsg = errData?.error?.message || `Status ${testRes.status}`;
+          console.warn(`[Test Gemini] Model ${testModel} gagal: ${lastErrorMsg}`);
+        }
+      } catch (err) {
+        lastErrorMsg = err.message;
+      }
     }
 
     return { 
-      success: true, 
-      model: testModel,
-      message: `Terhubung (Model: ${testModel})` 
+      success: false, 
+      message: lastErrorMsg || 'Gagal menghubungi model Gemini yang tersedia.' 
     };
   } catch (err) {
     return { success: false, message: err.message || 'Gagal menghubungi server Gemini.' };
