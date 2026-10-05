@@ -7,16 +7,23 @@ import LocationRules from './components/LocationRules';
 import Footer from './components/Footer';
 import RoomModal from './components/RoomModal';
 import NotFoundKos from './components/NotFoundKos';
+import AdminAIChat from './components/AdminAIChat';
 import { getActiveKost, buatLinkWa } from './data/kostData';
 import { MessageCircle } from 'lucide-react';
 
 export default function App() {
   const [currentKost, setCurrentKost] = useState(getActiveKost());
   const [selectedRoom, setSelectedRoom] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(() => {
+    const p = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+    return p === '/update-ai' || p === '/admin';
+  });
 
   // Pantau perubahan URL (jika user navigasi atau ganti path)
   useEffect(() => {
     const handleLocationChange = () => {
+      const p = window.location.pathname.toLowerCase().replace(/\/+$/, '');
+      setIsAdmin(p === '/update-ai' || p === '/admin');
       setCurrentKost(getActiveKost());
     };
     window.addEventListener('popstate', handleLocationChange);
@@ -25,12 +32,19 @@ export default function App() {
 
   // Update judul tab browser sesuai kos yang dibuka
   useEffect(() => {
-    if (currentKost?.nama) {
+    if (isAdmin) {
+      document.title = 'AI Kos Manager - Update & Tambah Kos';
+    } else if (currentKost?.nama) {
       document.title = `${currentKost.nama} - Katalog & Booking Kamar`;
     } else {
       document.title = 'Katalog Kos Tidak Ditemukan';
     }
-  }, [currentKost]);
+  }, [currentKost, isAdmin]);
+
+  // Render Admin AI Chat jika membuka /update-ai atau /admin
+  if (isAdmin) {
+    return <AdminAIChat />;
+  }
 
   // Jika tidak ada path kos yang valid (misal buka root / atau path salah)
   if (!currentKost) {
