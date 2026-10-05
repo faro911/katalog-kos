@@ -4,10 +4,102 @@
  * untuk memproses pembaruan data kos dan menghasilkan kode JavaScript yang valid.
  */
 
-const GEMINI_MODELS = [
-  'gemini-2.5-flash',
+// Model cadangan jika dynamic model discovery tidak dapat diakses
+const FALLBACK_MODELS = [
+  'gemini-2.0-flash',
+  'gemini-2.0-flash-lite',
+  'gemini-1.5-flash-latest',
   'gemini-1.5-flash',
+  'gemini-2.0-flash-exp',
+  'gemini-1.5-pro-latest',
+  'gemini-1.5-pro'
 ];
+
+/**
+ * Mengambil daftar model yang aktif untuk API Key ini dari Google Gemini API
+ */
+export async function getAvailableGeminiModels(apiKey) {
+  try {
+    const res = await fetch(`https://generativelanguage.googleapis.com/v1beta/models?key=${apiKey}`);
+    if (res.ok) {
+      const data = await res.json();
+      const available = (data.models || [])
+        .filter(m => Array.isArray(m.supportedGenerationMethods) && m.supportedGenerationMethods.includes('generateContent'))
+        .map(m => m.name.replace(/^models\//, ''));
+
+      if (available.length > 0) {
+        const priorityOrder = [
+          'gemini-2.0-flash',
+          'gemini-2.0-flash-lite',
+          'gemini-1.5-flash-latest',
+          'gemini-1.5-flash',
+          'gemini-2.0-flash-exp',
+          'gemini-1.5-pro-latest',
+          'gemini-1.5-pro',
+        ];
+
+        const sorted = [];
+        for (const p of priorityOrder) {
+          if (available.includes(p)) sorted.push(p);
+        }
+        for (const m of available) {
+          if (!sorted.includes(m)) sorted.push(m);
+        }
+
+        return sorted;
+      }
+    }
+  } catch (err) {
+    console.warn('Gagal mengambil daftar model secara dinamis, menggunakan daftar cadangan:', err);
+  }
+
+  return FALLBACK_MODELS;
+}
+
+/**
+ * Uji koneksi Google Gemini API Key
+ */
+export async function testGeminiConnection(apiKey) {
+  if (!apiKey || apiKey.trim() === '') {
+    return { success: false, message: 'API Key Gemini masih kosong.' };
+  }
+
+  try {
+    const cleanKey = apiKey.trim();
+    const models = await getAvailableGeminiModels(cleanKey);
+    if (!models || models.length === 0) {
+      return { success: false, message: 'Tidak ada model Gemini yang mendukung generateContent untuk API Key ini.' };
+    }
+
+    const testModel = models[0];
+    const testRes = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/${testModel}:generateContent?key=${cleanKey}`,
+      {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          contents: [{ parts: [{ text: 'Halo, balas OK jika terhubung.' }] }]
+        })
+      }
+    );
+
+    if (!testRes.ok) {
+      const errData = await testRes.json().catch(() => ({}));
+      return { 
+        success: false, 
+        message: errData?.error?.message || `Gagal menghubungi model ${testModel} (Status: ${testRes.status})` 
+      };
+    }
+
+    return { 
+      success: true, 
+      model: testModel,
+      message: `Terhubung (Model: ${testModel})` 
+    };
+  } catch (err) {
+    return { success: false, message: err.message || 'Gagal menghubungi server Gemini.' };
+  }
+}
 
 /**
  * Memproses perintah pengguna menggunakan Google Gemini API
@@ -19,6 +111,11 @@ export async function processKostUpdateWithAI(apiKey, currentCode, userPrompt) {
   if (!apiKey || apiKey.trim() === '') {
     throw new Error('Kunci Google Gemini API belum diisi. Silakan masukkan di tombol Pengaturan (⚙️).');
   }
+
+  const cleanKey = apiKey.trim();
+
+  // Dapatkan model yang aktif dan didukung akun secara otomatis
+  const candidateModels = await getAvailableGeminiModels(cleanKey);
 
   const systemInstruction = `Anda adalah Antigravity AI Code Assistant untuk platform Katalog Kos Multi-Tenant React.
 Tugas Anda adalah memperbarui atau menambahkan data properti kos pada file 'src/data/kostData.js' sesuai instruksi pengguna.
@@ -109,16 +206,42 @@ Tolong proses instruksi di atas dan berikan respons JSON sesuai format yang dite
 
   let lastError = null;
 
-  for (const model of GEMINI_MODELS) {
+  for (const model of candidateModels) {
     try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`,
+      console.log(`[AI Service] Mencoba model: ${model}...`);
+      let response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${cleanKey}`,
         {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify(requestBody),
         }
       );
+
+      // Jika error 400 karena konfigurasi tertentu (misal responseMimeType), coba fallback standar
+      if (!response.ok && response.status === 400) {
+        console.warn(`[AI Service] Model ${model} menolak request JSON langsung, mencoba fallback standard...`);
+        const fallbackBody = {
+          contents: [
+            {
+              parts: [
+                {
+                  text: `${systemInstruction}\n\nBerikut isi 'src/data/kostData.js':\n${currentCode}\n\nInstruksi:\n${userPrompt}\n\nWAJIB: Hasilkan HANYA objek JSON valid tanpa markdown backticks.`
+                }
+              ]
+            }
+          ],
+          generationConfig: { temperature: 0.2 }
+        };
+        response = await fetch(
+          `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${cleanKey}`,
+          {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(fallbackBody),
+          }
+        );
+      }
 
       if (!response.ok) {
         const errData = await response.json().catch(() => ({}));
@@ -129,15 +252,19 @@ Tolong proses instruksi di atas dan berikan respons JSON sesuai format yang dite
       const rawText = data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
       if (!rawText) {
-        throw new Error('AI tidak menghasilkan jawaban yang valid.');
+        throw new Error(`AI (${model}) tidak menghasilkan jawaban.`);
       }
 
       // Bersihkan kemungkinan markdown jika ada
-      const cleanedJson = rawText.replace(/^\`\`\`json\n?/, '').replace(/\n?\`\`\`$/, '').trim();
+      const cleanedJson = rawText
+        .replace(/^\s*```(?:json)?\s*/i, '')
+        .replace(/\s*```\s*$/i, '')
+        .trim();
+
       const parsed = JSON.parse(cleanedJson);
 
       if (!parsed.updatedCode) {
-        throw new Error('Hasil AI tidak menyertakan kode yang diperbarui.');
+        throw new Error(`Hasil AI (${model}) tidak menyertakan kode yang diperbarui.`);
       }
 
       return {
@@ -146,12 +273,13 @@ Tolong proses instruksi di atas dan berikan respons JSON sesuai format yang dite
         slug: parsed.slug || null,
         commitMessage: parsed.commitMessage || 'feat: update katalog kos via AI Assistant',
         updatedCode: parsed.updatedCode,
+        usedModel: model
       };
     } catch (err) {
       lastError = err;
-      console.warn(`Percobaan dengan model ${model} gagal: ${err.message}. Mencoba model berikutnya jika ada...`);
+      console.warn(`[AI Service] Percobaan dengan model ${model} gagal: ${err.message}. Mencoba model alternatif...`);
     }
   }
 
-  throw new Error(`Gagal memproses dengan Gemini AI: ${lastError?.message || 'Unknown error'}`);
+  throw new Error(`Gagal memproses dengan Gemini AI: ${lastError?.message || 'Semua model gagal dihubungi.'}`);
 }

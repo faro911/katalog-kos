@@ -19,7 +19,7 @@ import {
   Trash2
 } from 'lucide-react';
 import { testGitHubConnection, getFileFromGitHub, commitFileToGitHub } from '../services/githubService';
-import { processKostUpdateWithAI } from '../services/aiService';
+import { processKostUpdateWithAI, testGeminiConnection } from '../services/aiService';
 
 function GithubIcon({ className = "w-3.5 h-3.5 text-gray-800" }) {
   return (
@@ -48,6 +48,8 @@ export default function AdminAIChat() {
   const [repoName, setRepoName] = useState(() => localStorage.getItem('kost_repo_name') || 'katalog-kos');
   const [testingGithub, setTestingGithub] = useState(false);
   const [githubStatus, setGithubStatus] = useState(null);
+  const [testingGemini, setTestingGemini] = useState(false);
+  const [geminiStatus, setGeminiStatus] = useState(null);
 
   // Chat State
   const [messages, setMessages] = useState(() => {
@@ -122,6 +124,19 @@ export default function AdminAIChat() {
     const res = await testGitHubConnection(githubToken.trim(), repoOwner.trim(), repoName.trim());
     setTestingGithub(false);
     setGithubStatus(res);
+  };
+
+  // Test Gemini API Connection
+  const handleTestGemini = async () => {
+    if (!geminiKey) {
+      setGeminiStatus({ success: false, message: 'Masukkan API Key Gemini terlebih dahulu.' });
+      return;
+    }
+    setTestingGemini(true);
+    setGeminiStatus(null);
+    const res = await testGeminiConnection(geminiKey.trim());
+    setTestingGemini(false);
+    setGeminiStatus(res);
   };
 
   // Copy link helper
@@ -596,9 +611,24 @@ export default function AdminAIChat() {
                   placeholder="AIzaSyxxxxxxxxxxxx"
                   className="w-full text-xs py-2.5 px-3 bg-gray-50 border border-gray-200 rounded-xl focus:outline-none focus:border-gray-900 font-mono"
                 />
-                <p className="text-[10px] text-gray-400">
-                  Didapat gratis dari Google AI Studio tanpa kartu kredit.
-                </p>
+                <div className="flex items-center justify-between">
+                  <p className="text-[10px] text-gray-400">
+                    Didapat gratis dari Google AI Studio tanpa kartu kredit.
+                  </p>
+                  <button
+                    type="button"
+                    onClick={handleTestGemini}
+                    disabled={testingGemini}
+                    className="text-[11px] text-indigo-600 font-semibold hover:underline cursor-pointer"
+                  >
+                    {testingGemini ? 'Menguji...' : 'Uji Gemini'}
+                  </button>
+                </div>
+                {geminiStatus && (
+                  <p className={`text-[11px] font-semibold ${geminiStatus.success ? 'text-emerald-600' : 'text-rose-600'}`}>
+                    {geminiStatus.success ? `✅ ${geminiStatus.message}` : `❌ ${geminiStatus.message}`}
+                  </p>
+                )}
               </div>
 
               {/* PIN Setting */}
