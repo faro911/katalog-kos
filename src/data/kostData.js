@@ -1,251 +1,377 @@
 /**
- * DATABASE KOS - KOST PUTRI EKSKLUSIF SMART BRILIAN SEMARANG
- * Target saat ini adalah per-kos (single property catalog)
- * Link Google Maps: https://maps.app.goo.gl/bEqnX1ebCgWf5YM96
+ * DATABASE KOS - BS RESIDENCE EXCLUSIVE KOST SEMARANG
+ * Target saat ini: Single Property Catalog (Per-kos saja)
+ * Lokasi: Jl. Brumbungan No. 78, Semarang Tengah
+ * Google Maps: https://maps.app.goo.gl/KZCnJdgmm5ov8Hf18
+ * Kontak WhatsApp Pengelola: 0853-2527-4567 (6285325274567)
  */
 
 export const databaseKos = {
-  // PROPERTI UTAMA: KOST PUTRI EKSKLUSIF SMART BRILIAN
-  smartbrilian: {
-    id: 'smartbrilian',
+  // PROPERTI UTAMA: BS RESIDENCE EXCLUSIVE KOST
+  bsresidence: {
+    id: 'bsresidence',
     status: 'AKTIF',
-    nama: 'Kost Putri Eksklusif Smart Brilian',
-    namaPendek: 'Smart Brilian',
-    tipe: 'Khusus Putri (Mahasiswi, Dokter Muda & Karyawati)',
-    tagline: 'Hunian Putri Eksklusif, Tenang, & Nyaman Dekat Sam Poo Kong & RSUP Dr. Kariadi Semarang',
-    deskripsi: 'Kost putri eksklusif modern yang dirancang khusus untuk kenyamanan belajar mahasiswi, dokter muda / koas RS Kariadi, serta karyawati. Menawarkan kamar ber-AC fully furnished dengan kamar mandi dalam (water heater), Wi-Fi kencang, keamanan CCTV 24 jam, dan lingkungan yang asri serta kondusif.',
-    temaWarna: 'rose',
+    nama: 'BS Residence Exclusive Kost',
+    namaPendek: 'BS Residence',
+    tipe: 'Kost & Serviced Residence Eksklusif (Campur)',
+    targetPenghuni: 'Eksekutif Muda, Dokter, Karyawan Profesional, & Pasutri Sah',
+    tagline: 'Boutique Residence Mewah & Modern di Jantung Kota Semarang — 3 Menit ke Simpang Lima & RS Telogorejo',
+    deskripsi: 'BS Residence menghadirkan konsep hunian eksklusif bergaya boutique hotel bintang di kawasan paling strategis Semarang Tengah. Dilengkapi fasilitas premium parkir mobil luas dengan layanan free valet, keamanan security & CCTV 24 jam, kamar fully furnished mewah dengan kulkas pribadi, water heater, Smart TV, serta Wi-Fi fiber optic berkecepatan tinggi.',
+    temaWarna: 'amber-slate', // Luxury Modern Theme: Slate Obsidian & Champagne Gold
     rating: 4.9,
-    totalUlasan: 38,
+    totalUlasan: 46,
     
-    whatsapp: '6281239914388',
-    alamat: 'Jl. Gedung Batu Tengah II No.12A, Kel. Simongan, Kec. Semarang Barat, Kota Semarang, Jawa Tengah 50148',
-    googleMapsUrl: 'https://maps.app.goo.gl/bEqnX1ebCgWf5YM96',
-    googleMapsEmbedUrl: 'https://maps.google.com/maps?q=-6.996413,110.4001106&hl=id&z=16&output=embed',
+    whatsapp: '6285325274567',
+    alamat: 'Jl. Brumbungan No. 78, Kel. Brumbungan, Kec. Semarang Tengah, Kota Semarang, Jawa Tengah 50135',
+    googleMapsUrl: 'https://maps.app.goo.gl/KZCnJdgmm5ov8Hf18',
+    googleMapsEmbedUrl: 'https://maps.google.com/maps?q=-6.9832496,110.4263105&hl=id&z=16&output=embed',
 
     stats: {
-      totalKamar: 18,
-      kamarTersedia: 3,
-      jarakKampus: '2 Menit ke Sam Poo Kong & 5 Menit RS Kariadi',
-      kecepatanWifi: '100 Mbps Dedicated Fiber',
-      sistemListrik: 'Token Mandiri per Kamar',
+      totalKamar: 24,
+      kamarTersedia: 4,
+      jarakPusat: '3 Menit ke Simpang Lima & RS Telogorejo',
+      kecepatanWifi: '150 Mbps Fiber Optic',
+      parkir: 'Parkir Mobil & Motor + Free Valet Service',
+      keamanan: 'Security Guard & CCTV 24 Jam',
     },
 
     keunggulan: [
       {
-        judul: 'Keamanan 24 Jam & Terkontrol',
-        deskripsi: 'Akses gerbang tertutup mandiri dengan pengawasan CCTV 24/7 di seluruh area publik untuk ketenangan penghuni dan orang tua.',
-        icon: 'ShieldCheck',
-      },
-      {
-        judul: 'Fasilitas Kamar Lengkap (Siap Huni)',
-        deskripsi: 'Semua kamar dilengkapi Full AC, Smart TV, Kamar Mandi Dalam dengan Water Heater air hangat, springbed nyaman, dan meja belajar.',
-        icon: 'Sparkles',
-      },
-      {
-        judul: 'Lokasi Prime Semarang Barat',
-        deskripsi: 'Hanya 2 menit dari Klenteng Sam Poo Kong, 3 menit PT Phapros & Kimia Farma, serta 5 menit RSUP Dr. Kariadi tanpa hambatan macet.',
+        judul: 'Lokasi Super Prime Jantung Kota',
+        deskripsi: 'Terletak di Brumbungan, Semarang Tengah. Hanya 3 menit ke Simpang Lima, Tentrem Mall, RS Telogorejo, dan pusat bisnis utama tanpa macet.',
         icon: 'MapPin',
+        badge: 'Prime Location'
       },
       {
-        judul: 'Fasilitas Bersama Modern & Bersih',
-        deskripsi: 'Dapur bersama kompor & gas, dispenser air minum RO gratis, kulkas bersama, mesin cuci & area jemur beratap transparan.',
-        icon: 'Utensils',
+        judul: 'Parkir Mobil Luas & Free Valet',
+        deskripsi: 'Fasilitas langka di pusat kota Semarang: area parkir mobil indoor yang luas, aman, dan didukung layanan valet parking gratis dari security.',
+        icon: 'Car',
+        badge: 'Fasilitas Langka'
+      },
+      {
+        judul: 'Keamanan 24 Jam & Smart Access',
+        deskripsi: 'Penjagaan security guard 24 jam nonstop, gerbang one-gate system, kartu akses RFID mandiri, serta pantauan CCTV di setiap lantai.',
+        icon: 'ShieldCheck',
+        badge: '100% Aman'
+      },
+      {
+        judul: 'Kamar Hotel-Grade Fully Furnished',
+        deskripsi: 'Setiap kamar dilengkapi kulkas pribadi, AC Daikin dingin, Smart TV layar lebar, springbed orthopedic, dan KM dalam water heater air hangat.',
+        icon: 'Sparkles',
+        badge: 'Full Facilities'
       },
     ],
 
     fasilitasUmum: [
-      { nama: 'Wi-Fi Fiber High Speed 100 Mbps', icon: 'Wifi', desc: 'Internet stabil untuk tugas kuliah, Zoom meeting, skripsi, dan streaming tanpa lag' },
-      { nama: 'CCTV 24 Jam & Smart Access', icon: 'ShieldCheck', desc: 'Sistem keamanan gerbang tertutup dan pantauan kamera CCTV 24 jam demi kenyamanan privasi' },
-      { nama: 'Kamar Mandi Dalam + Water Heater', icon: 'Droplets', desc: 'Setiap kamar dilengkapi kamar mandi dalam dengan pemanas air (water heater), shower, & kloset duduk' },
-      { nama: 'Full AC & Sirkulasi Alami', icon: 'Wind', desc: 'Pendingin ruangan AC dingin dan hemat energi, dilengkapi jendela untuk sirkulasi udara segar' },
-      { nama: 'Dapur Bersama Modern & Lengkap', icon: 'Utensils', desc: 'Dilengkapi kompor gas, wastafel cuci piring, rak piring, dan dispenser air minum galon gratis' },
-      { nama: 'Kulkas Bersama & Ruang Penyimpanan', icon: 'Coffee', desc: 'Tersedia kulkas bersama di area dapur untuk menyimpan bahan makanan dan minuman dingin' },
-      { nama: 'Mesin Cuci & Area Jemuran Beratap', icon: 'Shirt', desc: 'Fasilitas mesin cuci bersama gratis dan area jemuran luas beratap polycarbonate aman dari hujan' },
-      { nama: 'Parkir Motor & Mobil Beratap', icon: 'Car', desc: 'Area parkir kendaraan di dalam pagar yang aman, beratap, dan tidak terpapar panas hujan' },
-      { nama: 'Ruang Tamu & Lobby Bersama', icon: 'Key', desc: 'Area khusus untuk menerima kunjungan orang tua, keluarga, atau teman dengan sopan dan nyaman' },
-      { nama: 'Petugas Kebersihan Area Bersama', icon: 'CheckCircle2', desc: 'Koridor, dapur, dan area bersama dibersihkan secara rutin oleh petugas kos profesional' },
+      { 
+        nama: 'Parkir Mobil Luas & Free Valet', 
+        kategori: 'Parkir & Mobilitas',
+        icon: 'Car', 
+        desc: 'Parkir indoor aman dan terlindung di dalam gedung dengan dukungan bantuan valet parking petugas keamanan' 
+      },
+      { 
+        nama: 'Security Guard 24 Jam & One Gate System', 
+        kategori: 'Keamanan',
+        icon: 'ShieldCheck', 
+        desc: 'Petugas keamanan bertugas 24 jam penuh di gerbang masuk demi privasi dan keamanan maksimal seluruh penghuni' 
+      },
+      { 
+        nama: 'Smart Card Access & Full CCTV Coverage', 
+        kategori: 'Keamanan',
+        icon: 'Key', 
+        desc: 'Akses pintu utama menggunakan kartu RFID mandiri serta kamera pengawas CCTV di area parkir, lorong, dan lobby' 
+      },
+      { 
+        nama: 'Wi-Fi Fiber High Speed 150 Mbps', 
+        kategori: 'Konektivitas',
+        icon: 'Wifi', 
+        desc: 'Jaringan internet fiber optic berkecepatan tinggi dengan access point di tiap lantai untuk WFH, meeting online, & hiburan' 
+      },
+      { 
+        nama: 'Lobby & Receptionist Bersama', 
+        kategori: 'Kenyamanan',
+        icon: 'Building2', 
+        desc: 'Ruang tunggu tamu ber-AC yang elegan dan modern untuk menyambut tamu, rekan bisnis, atau keluarga dengan nyaman' 
+      },
+      { 
+        nama: 'Dapur & Pantry Bersama Modern', 
+        kategori: 'Kuliner',
+        icon: 'Utensils', 
+        desc: 'Dilengkapi kompor gas modern, kitchen sink, microwave, dan dispenser air minum galon RO gratis siap minum' 
+      },
+      { 
+        nama: 'Mesin Cuci Bersama & Area Laundry', 
+        kategori: 'Layanan',
+        icon: 'Shirt', 
+        desc: 'Fasilitas mesin cuci otomatis bersama serta opsi layanan laundry express terdekat di sekitar gedung kos' 
+      },
+      { 
+        nama: 'Housekeeping & Kebersihan Rutin', 
+        kategori: 'Layanan',
+        icon: 'CheckCircle2', 
+        desc: 'Petugas kebersihan membersihkan koridor, lobby, pantry, dan area parkir secara terjadwal setiap hari' 
+      },
+      { 
+        nama: 'Kamar Mandi Dalam Water Heater', 
+        kategori: 'Kenyamanan',
+        icon: 'Droplets', 
+        desc: 'Water heater pemanas air di seluruh unit kamar mandi dalam, dilengkapi shower berkualitas dan kloset duduk Toto' 
+      },
+      { 
+        nama: 'Kulkas Pribadi di Setiap Kamar', 
+        kategori: 'Kenyamanan',
+        icon: 'Coffee', 
+        desc: 'Setiap kamar memiliki lemari es/kulkas pribadi untuk menyimpan makanan dan minuman dingin tanpa perlu berbagi' 
+      },
     ],
 
     kamar: [
       {
-        id: 'smart-deluxe-a',
-        nama: 'Tipe A: Deluxe Smart Room (Favorit)',
-        kategori: 'ac',
+        id: 'deluxe-executive',
+        nama: 'Deluxe Executive Room',
+        tipeKamar: 'Tipe Deluxe',
+        kategori: 'deluxe',
         tipeKm: 'KM Dalam + Water Heater',
-        ukuran: '3.5 x 3.5 Meter',
-        hargaBulan: 1950000,
-        hargaTahun: 21500000,
+        ukuran: '3.5 x 4 Meter (14 m²)',
+        hargaBulan: 2500000,
+        hargaTahun: 27500000,
         status: 'Tersedia',
         sisaKamar: 2,
-        badgePromo: 'Paling Diminati',
-        gambarUtama: 'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1000&auto=format&fit=crop',
+        badgePromo: 'Best Seller',
+        tipeKasur: 'Queen Bed (160 x 200 cm)',
+        kapasitas: '1 - 2 Orang',
+        gambarUtama: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',
         galeri: [
-          'https://images.unsplash.com/photo-1598928506311-c55ded91a20c?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1522771739844-6a9f6d5f14af?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1200&auto=format&fit=crop',
         ],
         fasilitasKamar: [
-          'AC Hemat Energi (Dingin & Hening)',
-          'Smart TV Digital terpasang di dinding',
-          'Kamar Mandi Dalam dengan Water Heater (Air Hangat)',
-          'Shower Bersih, Kloset Duduk Toto, & Wastafel + Cermin',
-          'Springbed Single Berkualitas (120x200 cm) + Bantal & Sprei',
-          'Meja Belajar / Kerja Ergonomis & Kursi Nyaman',
-          'Lemari Pakaian 2 Pintu dengan Kaca Rias Panjang',
-          'Jendela Ventilasi Udara Luar & Gorden Blackout',
-          'Stop Kontak Lengkap & Lampu Tidur Warm',
-          'Token Listrik Mandiri per Kamar (Kontrol pemakaian pribadi)',
+          'AC Daikin / Panasonic Inverter Hemat Daya & Hening',
+          'Kulkas Pribadi 1 Pintu di Dalam Kamar',
+          'Smart TV 32 Inch LED (YouTube, Netflix Ready)',
+          'Kasur Springbed Queen Size (160x200 cm) + Bantal Hotel Grade',
+          'Kamar Mandi Dalam dengan Water Heater Ariston (Air Hangat)',
+          'Shower Tekanan Kencang, Kloset Duduk Toto & Wastafel Kaca',
+          'Meja Kerja Minimalis Ergonomis + Kursi Busa Nyaman',
+          'Lemari Pakaian 2 Pintu Sliding dengan Cermin Panjang',
+          'Jendela Sirkulasi Udara Alami + Gorden Blackout Mewah',
+          'Listrik Sistem Token Mandiri per Kamar',
         ],
-        biayaLain: 'Sewa bulanan sudah termasuk air bersih, Wi-Fi 100 Mbps, iuran sampah, dan fasilitas bersama. Listrik sistem token mandiri sesuai pemakaian.',
+        biayaLain: 'Sewa bulanan sudah termasuk air bersih, Wi-Fi 150 Mbps, parkir motor/mobil, iuran sampah, dan keamanan. Listrik sistem token mandiri sesuai pemakaian.',
       },
       {
-        id: 'smart-suite-b',
-        nama: 'Tipe B: Executive Suite Room (Extra Luas)',
-        kategori: 'ac',
+        id: 'premiere-suite',
+        nama: 'Premiere Suite Room (Extra Luas)',
+        tipeKamar: 'Tipe Premiere',
+        kategori: 'premiere',
         tipeKm: 'KM Dalam + Water Heater',
-        ukuran: '4 x 4 Meter',
-        hargaBulan: 2250000,
-        hargaTahun: 24500000,
+        ukuran: '4 x 4.5 Meter (18 m²)',
+        hargaBulan: 2850000,
+        hargaTahun: 31000000,
         status: 'Tersedia',
-        sisaKamar: 1,
-        badgePromo: 'Tipe Terluas',
-        gambarUtama: 'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1000&auto=format&fit=crop',
+        sisaKamar: 2,
+        badgePromo: 'Rekomendasi Eksekutif',
+        tipeKasur: 'King Bed (180 x 200 cm)',
+        kapasitas: '1 - 2 Orang',
+        gambarUtama: 'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop',
         galeri: [
-          'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1566665797739-1674de7a421a?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop',
         ],
         fasilitasKamar: [
-          'Kamar Lebih Luas & Plafon Tinggi Sejuk (4 x 4 m)',
-          'AC Daikin / Panasonic Dingin Maksimal',
-          'Smart TV 32 Inch (YouTube & Netflix Ready)',
-          'Kulkas Mini Pribadi di Dalam Kamar',
-          'Kamar Mandi Dalam dengan Water Heater Ariston',
-          'Kloset Duduk Toto, Shower Bertekanan Kencang & Wastafel Marmer',
-          'Kasur Springbed Queen (160x200 cm) Premium Luxury',
-          'Meja Kerja Luas + Kursi Hidrolik & Rak Buku',
-          'Lemari Pakaian Besar 3 Pintu + Cermin Full Body',
-          'Jendela Besar Menghadap View Luar Asri',
+          'Ruang Kamar Lebih Luas & Plafon Tinggi (18 m²)',
+          'AC 1 PK Daikin Dingin Maksimal',
+          'Kulkas Pribadi 1 Pintu Standar Hotel',
+          'Smart TV 43 Inch 4K Digital dengan Saluran Lengkap',
+          'Kasur Springbed King Size (180x200 cm) Mewah',
+          'Kamar Mandi Dalam Mewah + Water Heater + Kaca Shower Box',
+          'Sofa Santai / Lounge Chair + Meja Kopi Sudut',
+          'Workstation Meja Kerja Eksekutif Luas + Lampu Belajar',
+          'Lemari Pakaian Besar 3 Pintu + Cermin Full-Length',
+          'Jendela Kaca Lebar Menghadap City View Brumbungan',
           'Token Listrik Mandiri per Kamar',
         ],
-        biayaLain: 'Termasuk air bersih, Wi-Fi 100 Mbps, parkir, dan iuran sampah. Listrik token mandiri.',
+        biayaLain: 'Termasuk fasilitas parkir mobil gratis (free valet), Wi-Fi 150 Mbps, air bersih, dan pemakaian pantry bersama. Listrik token mandiri.',
       },
       {
-        id: 'smart-cozy-c',
-        nama: 'Tipe C: Cozy Superior Room (Kompak & Nyaman)',
-        kategori: 'ac',
-        tipeKm: 'KM Dalam',
-        ukuran: '3 x 3.5 Meter',
-        hargaBulan: 1800000,
-        hargaTahun: 19800000,
+        id: 'royal-penthouse',
+        nama: 'Royal Penthouse Suite',
+        tipeKamar: 'Tipe Penthouse',
+        kategori: 'penthouse',
+        tipeKm: 'KM Dalam Mewah + Water Heater',
+        ukuran: '5 x 5 Meter (25 m²)',
+        hargaBulan: 3300000,
+        hargaTahun: 36000000,
         status: 'Penuh Terisi',
         sisaKamar: 0,
         badgePromo: 'Waiting List',
-        gambarUtama: 'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop',
+        tipeKasur: 'King Bed Hotel Bintang 5',
+        kapasitas: '1 - 2 Orang',
+        gambarUtama: 'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop',
         galeri: [
-          'https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1554995207-c18c203602cb?q=80&w=1000&auto=format&fit=crop',
-          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1000&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1618773928121-c32242e63f39?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop',
+          'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop',
         ],
         fasilitasKamar: [
-          'AC Hemat Daya 0.5 PK Dingin & Tenang',
-          'Kamar Mandi Dalam Bersih (Shower & Kloset Duduk)',
-          'Kasur Springbed Single (100x200 cm) + Bantal',
-          'Meja Belajar Kayu & Kursi Santai',
-          'Lemari Pakaian 2 Pintu',
-          'Jendela Ventilasi Sirkulasi Udara Baik',
+          'Unit Terluas (25 m²) dengan Living Space Semi-Private',
+          'AC 1.5 PK Inverter dengan Pengaturan Suhu Otomatis',
+          'Kulkas 2 Pintu Pribadi di Dalam Kamar',
+          'Smart TV 50 Inch Ultra HD 4K + Soundbar',
+          'Pantry Basah Mini & Microwave Pribadi di Kamar',
+          'Kamar Mandi Marmer Mewah + Water Heater & Rain Shower',
+          'Meja Kerja Direktur & Kursi Ergonomis Mesh',
+          'Walk-in Wardrobe / Lemari Custom Dinding Penuh',
+          'Balkon Luar Pribadi dengan Pemandangan Kota',
           'Token Listrik Mandiri per Kamar',
         ],
-        biayaLain: 'Termasuk air bersih, Wi-Fi gratis, dan kebersihan lorong. Listrik sistem token mandiri.',
+        biayaLain: 'Fasilitas terlengkap all-in (kecuali token listrik). Tersedia slot parkir mobil prioritas di dalam gerbang.',
       },
     ],
 
     lokasiTerdekat: [
-      { nama: 'Klenteng Wisata Sam Poo Kong', jarak: '2 Menit (700 m)', icon: 'Compass', kategori: 'Wisata & Landmark' },
-      { nama: 'PT Phapros Tbk & Kawasan Industri Simongan', jarak: '3 Menit (1.1 km)', icon: 'Building2', kategori: 'Perkantoran & Industri' },
-      { nama: 'PT Kimia Farma Simongan', jarak: '3 Menit (1.2 km)', icon: 'HeartPulse', kategori: 'Kesehatan & Farmasi' },
-      { nama: 'RSUP Dr. Kariadi Semarang (Rumah Sakit Utama)', jarak: '5 Menit (2.3 km)', icon: 'HeartPulse', kategori: 'Rumah Sakit & Koas' },
-      { nama: 'Kawasan Pamularsih & Kaligarang Raya', jarak: '3 Menit (1.3 km)', icon: 'Compass', kategori: 'Akses Utama Kota' },
-      { nama: 'Universitas Dian Nuswantoro (UDINUS)', jarak: '7 Menit (3.4 km)', icon: 'GraduationCap', kategori: 'Kampus' },
-      { nama: 'Pusat Simpang Lima & Ciputra Mall Semarang', jarak: '10 Menit (4.2 km)', icon: 'ShoppingBag', kategori: 'Pusat Perbelanjaan' },
-      { nama: 'Bandara Internasional Jenderal Ahmad Yani', jarak: '12 Menit (5.5 km)', icon: 'Plane', kategori: 'Transportasi' },
-      { nama: 'Minimarket (Indomaret & Alfamart) & Kuliner Simongan', jarak: '1 Menit (150 m)', icon: 'UtensilsCrossed', kategori: 'Kebutuhan Harian' },
+      { 
+        nama: 'Kawasan Simpang Lima Semarang (Pusat Kota)', 
+        jarak: '3 Menit (1.2 km)', 
+        icon: 'Compass', 
+        kategori: 'Pusat Kota & Landmark',
+        highlight: 'Jantung Kota' 
+      },
+      { 
+        nama: 'RS Telogorejo Semarang (SMC)', 
+        jarak: '2 Menit (800 m)', 
+        icon: 'HeartPulse', 
+        kategori: 'Rumah Sakit & Kesehatan',
+        highlight: 'Ideal untuk Nakes / Pasien' 
+      },
+      { 
+        nama: 'Mall Ciputra & Plaza Simpang Lima', 
+        jarak: '3 Menit (1.3 km)', 
+        icon: 'ShoppingBag', 
+        kategori: 'Mall & Belanja',
+        highlight: 'Belanja & Bioskop' 
+      },
+      { 
+        nama: 'Tentrem Mall & Hotel Semarang (Gajah Mada)', 
+        jarak: '3 Menit (1.1 km)', 
+        icon: 'Building2', 
+        kategori: 'Mall & Lifestyle',
+        highlight: 'Modern Lifestyle Mall' 
+      },
+      { 
+        nama: 'Superindo Brumbungan / Gajah Mada', 
+        jarak: '1 Menit (300 m)', 
+        icon: 'ShoppingBag', 
+        kategori: 'Kebutuhan Harian',
+        highlight: 'Bisa Jalan Kaki' 
+      },
+      { 
+        nama: 'Kawasan Kuliner Pecinan & Gajah Mada', 
+        jarak: '2 Menit (500 m)', 
+        icon: 'UtensilsCrossed', 
+        kategori: 'Sentra Kuliner',
+        highlight: 'Pusat Kuliner Favorit' 
+      },
+      { 
+        nama: 'Pollux Mall Paragon & DP Mall Pemuda', 
+        jarak: '5 Menit (2.2 km)', 
+        icon: 'ShoppingBag', 
+        kategori: 'Mall & Perbelanjaan',
+        highlight: 'Pusat Bisnis Pemuda' 
+      },
+      { 
+        nama: 'Stasiun Kereta Api Tawang & Poncol', 
+        jarak: '7 Menit (2.8 km)', 
+        icon: 'Train', 
+        kategori: 'Transportasi Antarkota',
+        highlight: 'Akses Kereta Cepat' 
+      },
+      { 
+        nama: 'Bandara Internasional Jenderal Ahmad Yani', 
+        jarak: '15 Menit (8.5 km)', 
+        icon: 'Plane', 
+        kategori: 'Bandara',
+        highlight: 'Akses Penerbangan' 
+      },
     ],
 
     ulasanPenghuni: [
       {
-        nama: 'dr. Anindya Putri',
-        profesi: 'Dokter Muda / Koas RS Kariadi',
+        nama: 'dr. Hendra Wicaksono, Sp.PD',
+        profesi: 'Dokter Spesialis RS Telogorejo',
         rating: 5,
-        teks: 'Lokasinya deket banget ke RSUP Dr. Kariadi, cuma 5 menit ga kena macet. Kamarnya tenang, AC dingin, dan ada water heater jadi pulang dinas malam bisa mandi air hangat dengan nyaman. Ibu kos juga sangat ramah!',
+        teks: 'Sangat terbantu tinggal di BS Residence. Lokasinya hanya 2 menit ke RS Telogorejo, jadi saat ada panggilan darurat malam hari sangat cepat sampai. Parkir mobilnya aman dan ada security yang sigap membantu parkir/valet. Kamar hening, AC dingin, dan kasurnya nyaman sekali untuk istirahat.',
+        waktu: '2 minggu lalu'
+      },
+      {
+        nama: 'Natasya Priscilla',
+        profesi: 'Relationship Manager Perbankan di Simpang Lima',
+        rating: 5,
+        teks: 'Konsepnya benar-benar seperti serviced residence hotel bintang. Kamarnya bersih, ada kulkas pribadi di dalam kamar, Smart TV 4K, dan internetnya super cepat untuk kerja remote. Security 24 jam membuat saya merasa sangat aman pulang kerja malam.',
         waktu: '1 bulan lalu'
       },
       {
-        nama: 'Clarissa Maharani',
-        profesi: 'Mahasiswi S1 Farmasi / Kimia',
+        nama: 'Kevin & Stephanie',
+        profesi: 'Pasangan Suami Istri / Pengusaha',
         rating: 5,
-        teks: 'Kosnya aman banget karena gerbang selalu terkunci dan ada CCTV. Wi-Fi fiber nya kenceng buat nugas atau Zoom seminar. Dapur dan mesin cuci juga sangat membantu menghemat pengeluaran bulanan.',
+        teks: 'Cari kos campur/pasutri eksklusif di Semarang tengah yang parkir mobilnya lega itu susah banget, tapi di BS Residence parkirannya luas dan indoor. Dekat ke Tentrem Mall dan kulineran Pecinan. Pengelolanya juga ramah dan profesional.',
         waktu: '2 bulan lalu'
-      },
-      {
-        nama: 'Nabila Santoso',
-        profesi: 'Karyawati Swasta di Simongan',
-        rating: 5,
-        teks: 'Parkir mobil dan motor aman di dalam pagar. Lingkungannya asri dan ga bising. Kamar mandi dalam bersih banget kloset duduknya. Rekomendasi buat mahasiswi atau karyawati yang cari kos eksklusif di Semarang.',
-        waktu: '3 bulan lalu'
       }
     ],
 
     faq: [
       {
-        tanya: 'Bagaimana cara menjadwalkan survei lokasi kamar?',
-        jawab: 'Anda dapat langsung menekan tombol WhatsApp di website ini untuk terhubung dengan pengelola. Kami siap memandu survei langsung ke lokasi atau memberikan video tour kamar terkini.'
+        tanya: 'Apakah BS Residence menerima penghuni putra, putri, atau pasutri?',
+        jawab: 'Ya, BS Residence adalah kost eksklusif campur yang menerima penghuni pria, wanita, maupun pasangan suami istri sah (dengan melampirkan fotokopi buku nikah/KTP). Lingkungan sangat tertib, kondusif, dan didominasi karyawan profesional, dokter, dan eksekutif muda.'
       },
       {
-        tanya: 'Apakah biaya sewa bulanan sudah termasuk listrik?',
-        jawab: 'Biaya sewa bulanan sudah mencakup seluruh fasilitas gratis: air bersih PDAM jernih, Wi-Fi 100 Mbps, pemakaian dapur bersama, mesin cuci, iuran sampah, dan keamanan. Listrik kamar menggunakan sistem token PLN mandiri sehingga Anda bebas mengontrol penggunaan sendiri.'
+        tanya: 'Bagaimana dengan fasilitas parkir mobil dan motor?',
+        jawab: 'Tersedia area parkir mobil dan motor beratap di dalam area gedung yang terpantau CCTV dan dijaga security 24 jam. Kami juga menyediakan layanan free valet parking dari petugas keamanan kami saat area parkir sedang padat.'
       },
       {
-        tanya: 'Bagaimana ketentuan tamu yang berkunjung?',
-        jawab: 'Demi kenyamanan dan privasi sesama penghuni putri, tamu pria (termasuk keluarga/teman) dipersilakan berkunjung di area ruang tamu lantai 1 maksimal hingga pukul 21.00 WIB dan tidak diperkenankan masuk ke lorong kamar.'
+        tanya: 'Apakah biaya sewa bulanan sudah termasuk air dan Wi-Fi?',
+        jawab: 'Ya! Biaya sewa bulanan sudah mencakup Wi-Fi fiber optic 150 Mbps, pasokan air bersih PDAM jernih, pemakaian dapur bersama/microwave, dispenser air minum galon RO gratis, kebersihan koridor harian, dan keamanan 24 jam. Listrik kamar menggunakan sistem token PLN mandiri sehingga Anda leluasa mengatur pemakaian sendiri.'
       },
       {
-        tanya: 'Apakah tersedia fasilitas parkir mobil?',
-        jawab: 'Ya, tersedia area parkir mobil dan motor beratap di dalam pagar lingkungan kos. Untuk reservasi slot parkir mobil, silakan konfirmasi terlebih dahulu dengan pengelola.'
+        tanya: 'Bagaimana cara menjadwalkan survei kamar di BS Residence?',
+        jawab: 'Anda dapat langsung mengklik tombol WhatsApp di website ini untuk terhubung dengan pengelola. Kami siap menyambut kedatangan Anda untuk survei fisik atau mengirimkan video walk-through unit kamar yang masih tersedia.'
+      },
+      {
+        tanya: 'Berapa deposit sewa dan bagaimana sistem pembayarannya?',
+        jawab: 'Pembayaran sewa dapat dilakukan secara bulanan atau tahunan (tersedia diskon khusus untuk pembayaran tahunan di muka). Untuk rincian deposit jaminan kamar, dapat dikonfirmasikan langsung melalui WhatsApp pengelola saat reservasi.'
       }
     ],
 
     peraturan: [
-      'Khusus dihuni oleh putri (mahasiswi, koas/dokter muda, atau karyawati).',
-      'Wajib menjaga ketertiban, kebersihan kamar & area bersama, serta norma kesopanan.',
-      'Akses gerbang mandiri (wajib menutup dan mengunci kembali gerbang demi keamanan bersama).',
-      'Tamu pria hanya diterima di Ruang Tamu lantai 1 hingga maksimal pukul 21.00 WIB.',
-      'Dilarang merokok di dalam kamar tidur ber-AC serta dilarang membawa hewan peliharaan & miras/narkoba.',
-      'Pembayaran sewa bulanan dilakukan tepat waktu pada awal periode sewa.',
+      'Menjaga ketenangan dan privasi sesama penghuni, terutama pada jam istirahat malam (pukul 22.00 - 06.00 WIB).',
+      'Tamu diperkenankan berkunjung di Lobby / Ruang Tamu lantai 1. Untuk kunjungan ke dalam kamar harap mengonfirmasi ke petugas keamanan.',
+      'Dilarang keras merokok di dalam kamar ber-AC dan area koridor tertutup (tersedia designated smoking area outdoor).',
+      'Dilarang membawa hewan peliharaan, senjata tajam, miras, serta barang-barang terlarang/narkoba.',
+      'Wajib membawa dan menggunakan kartu akses RFID mandiri untuk keluar masuk gedung utama.',
+      'Pembayaran sewa bulanan dilakukan tepat waktu pada awal periode sewa setiap bulannya.',
     ],
   }
 };
 
-// Aliases agar URL atau slug lama tetap aman dan tidak error
-databaseKos.smart = databaseKos.smartbrilian;
-databaseKos['smart-brilian'] = databaseKos.smartbrilian;
-databaseKos.kosa = databaseKos.smartbrilian;
-databaseKos.kosb = databaseKos.smartbrilian;
-databaseKos.hanida = databaseKos.smartbrilian;
-databaseKos.hanida2 = databaseKos.smartbrilian;
+// Aliases agar URL atau slug lama tetap aman dan kompatibel
+databaseKos.smartbrilian = databaseKos.bsresidence;
+databaseKos.smart = databaseKos.bsresidence;
+databaseKos['bs-residence'] = databaseKos.bsresidence;
+databaseKos.kosa = databaseKos.bsresidence;
+databaseKos.kosb = databaseKos.bsresidence;
+databaseKos.hanida = databaseKos.bsresidence;
 
 /**
  * HELPER: Mendapatkan kos aktif
  * Menargetkan per-kos saja (Single Property Catalog):
- * Selalu mengembalikan Kost Putri Eksklusif Smart Brilian sebagai properti utama default,
- * baik dibuka di root (/) maupun subpath apa pun.
+ * Selalu mengembalikan BS Residence Exclusive Kost sebagai properti utama default.
  */
 export function getActiveKost(customPath = null) {
-  // Properti utama default adalah Kost Putri Eksklusif Smart Brilian
-  const defaultKost = databaseKos.smartbrilian;
+  const defaultKost = databaseKos.bsresidence;
 
   if (typeof window !== 'undefined') {
     const urlParams = new URLSearchParams(window.location.search);
@@ -264,19 +390,12 @@ export function getActiveKost(customPath = null) {
   return defaultKost;
 }
 
-/**
- * Cek apakah URL yang sedang dikunjungi adalah kos yang ditolak
- * (Tidak ada kos yang ditolak untuk katalog single property ini)
- */
 export function checkIfCurrentPathRejected() {
   return null;
 }
 
-/**
- * Mengambil daftar kos aktif
- */
 export function getActiveKostsList() {
-  return [databaseKos.smartbrilian];
+  return [databaseKos.bsresidence];
 }
 
 // Format Rupiah Helper
@@ -294,9 +413,9 @@ export const buatLinkWa = (nomor, namaKos, namaKamar = '') => {
   const cleanNomor = nomor.replace(/[^0-9]/g, '');
   let pesan = '';
   if (namaKamar) {
-    pesan = `Halo Pengelola ${namaKos}, saya melihat katalog website untuk *${namaKamar}*. Apakah masih tersedia dan bisa saya jadwalkan survei lokasi minggu ini? Terima kasih!`;
+    pesan = `Halo Pengelola ${namaKos}, saya melihat katalog website untuk unit *${namaKamar}*. Apakah masih tersedia kamar kosong dan boleh saya jadwalkan survei lokasi minggu ini? Terima kasih!`;
   } else {
-    pesan = `Halo Pengelola ${namaKos}, saya tertarik ingin menanyakan ketersediaan kamar kosong dan info biaya sewa terbaru. Boleh info jadwal surveinya? Terima kasih!`;
+    pesan = `Halo Pengelola ${namaKos}, saya tertarik ingin menanyakan info ketersediaan kamar kosong dan survei lokasi di Jl. Brumbungan No. 78. Boleh dibantu infonya? Terima kasih!`;
   }
   return `https://wa.me/${cleanNomor}?text=${encodeURIComponent(pesan)}`;
 };
