@@ -1,11 +1,12 @@
+import React, { useState } from 'react';
 import { Star, MessageCircle, ChevronDown, HelpCircle } from 'lucide-react';
 import { buatLinkWa } from '../data/kostData';
 
 export default function ReviewsFaq({ kost }) {
   const [openFaqIndex, setOpenFaqIndex] = useState(0);
 
-  const ulasan = kost.ulasanPenghuni || [];
-  const faq = kost.faq || [];
+  const ulasan = kost?.ulasanPenghuni || [];
+  const faq = kost?.faq || [];
 
   return (
     <section id="ulasan" className="py-16 md:py-24 bg-slate-950 text-white border-t border-slate-800">
