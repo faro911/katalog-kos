@@ -15,24 +15,24 @@ import {
 export default function Hero({ kost }) {
   const heroImages = [
     {
-      url: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
-      title: "Deluxe Executive Room",
-      label: "Full AC, Kulkas Pribadi, Smart TV"
-    },
-    {
       url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
-      title: "Premiere Suite Room (Extra Luas)",
-      label: "King Bed, City View, Sofa Santai"
+      title: "Tipe A - Suite VVIP Room",
+      label: "Full AC, Water Heater, TV & Kulkas"
     },
     {
-      url: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1200&auto=format&fit=crop",
-      title: "Kamar Mandi Dalam Mewah",
-      label: "Water Heater Ariston & Shower Box"
+      url: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
+      title: "Tipe B - Deluxe Room",
+      label: "KM Dalam, AC Dingin, Smart TV"
+    },
+    {
+      url: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1200&auto=format&fit=crop",
+      title: "Tipe C - Superior Standard",
+      label: "Hemat, Bersih, Nyaman & Full Furnished"
     },
     {
       url: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
-      title: "Parkir Mobil Indoor & Security 24H",
-      label: "Aman, Luas & Free Valet Service"
+      title: "Carport Mobil & Parkir Motor Indoor",
+      label: "Aman di Dalam Gerbang & CCTV 24 Jam"
     }
   ];
 
@@ -56,14 +56,14 @@ export default function Hero({ kost }) {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2.5">
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-amber-500/10 border border-amber-500/30 text-xs font-bold text-amber-400">
                 <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-                <span>Boutique Serviced Residence</span>
+                <span>Exclusive Boarding House</span>
               </span>
               
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-800/80 border border-slate-700 text-xs font-semibold text-slate-300">
                 <Star className="w-3.5 h-3.5 text-amber-400 fill-amber-400" />
                 <span className="font-extrabold text-white">{kost.rating || 4.9}</span>
                 <span className="text-slate-500">•</span>
-                <span>{kost.totalUlasan || 46} Ulasan Terverifikasi</span>
+                <span>{kost.totalUlasan || 38} Ulasan Terverifikasi</span>
               </div>
 
               <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-emerald-950/80 border border-emerald-500/30 text-xs font-bold text-emerald-400">
@@ -74,34 +74,34 @@ export default function Hero({ kost }) {
 
             {/* Main Headline */}
             <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white tracking-tight leading-[1.14]">
-              Hunian Eksklusif Mewah di Jantung Kota Semarang —{' '}
+              Kost Eksklusif & Modern di Semarang —{' '}
               <span className="bg-gradient-to-r from-amber-400 via-yellow-300 to-amber-500 bg-clip-text text-transparent">
-                3 Mnt ke Simpang Lima & RS Telogorejo
+                {kost.stats?.jarakPusat || '5 Menit ke Kampus UNDIP Tembalang'}
               </span>
             </h1>
 
             {/* Description */}
             <p className="text-base sm:text-lg text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              Dirancang dengan standar hotel berbintang bagi eksekutif muda, dokter spesialis, profesional, dan pasutri sah. Menawarkan parkir mobil indoor dengan layanan <strong className="text-amber-400">Free Valet</strong>, keamanan security 24 jam, kamar fully furnished dengan kulkas pribadi, water heater, Smart TV 4K, dan Wi-Fi 150 Mbps.
+              {kost.deskripsi || 'Kost modern berkelas dengan standar kenyamanan tinggi di kawasan strategis Banyumanik - Tembalang Semarang. Suasana tenang, kamar fully furnished, KM dalam water heater, Smart TV, Wi-Fi fiber optic, carport mobil, dan akses 24 jam.'}
             </p>
 
             {/* Quick Strategic Distance Chips */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                <span>3 Mnt ke Simpang Lima</span>
+                <span>5 Mnt ke Kampus UNDIP</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                <span>2 Mnt ke RS Telogorejo</span>
+                <span>6 Mnt ke Gerbang Tol</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Car className="w-3.5 h-3.5 text-amber-400" />
-                <span>Parkir Mobil + Free Valet</span>
+                <span>Carport Mobil & Motor</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
-                <span>Security Guard 24 Jam</span>
+                <span>Akses Bebas 24 Jam</span>
               </div>
             </div>
 
@@ -246,13 +246,13 @@ export default function Hero({ kost }) {
           </div>
 
           <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-inner">
-            <p className="text-2xl sm:text-3xl font-black text-white">150 Mbps</p>
+            <p className="text-2xl sm:text-3xl font-black text-white">{kost.stats?.kecepatanWifi || '100 Mbps'}</p>
             <p className="text-xs font-semibold text-slate-400 mt-0.5">Wi-Fi Fiber Dedicated</p>
           </div>
 
           <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-inner">
-            <p className="text-2xl sm:text-3xl font-black text-white">2 - 3 Mnt</p>
-            <p className="text-xs font-semibold text-slate-400 mt-0.5">Ke Simpang Lima & RS Telogorejo</p>
+            <p className="text-2xl sm:text-3xl font-black text-white">5 Mnt</p>
+            <p className="text-xs font-semibold text-slate-400 mt-0.5">Ke Kampus UNDIP Tembalang</p>
           </div>
         </div>
 

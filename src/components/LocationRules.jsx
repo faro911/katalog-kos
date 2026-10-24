@@ -45,9 +45,10 @@ export default function LocationRules({ kost }) {
 
   const filteredPois = poiList.filter((item) => {
     if (poiFilter === 'Semua') return true;
-    if (poiFilter === 'Mall') return item.kategori?.includes('Mall') || item.kategori?.includes('Pusat Kota');
-    if (poiFilter === 'Kesehatan') return item.kategori?.includes('Rumah Sakit');
-    if (poiFilter === 'Transportasi') return item.kategori?.includes('Transportasi') || item.kategori?.includes('Bandara');
+    if (poiFilter === 'Kampus') return item.kategori?.includes('Kampus') || item.kategori?.includes('Pendidikan');
+    if (poiFilter === 'Kesehatan') return item.kategori?.includes('Rumah Sakit') || item.kategori?.includes('Kesehatan');
+    if (poiFilter === 'Mall & Belanja') return item.kategori?.includes('Mall') || item.kategori?.includes('Belanja') || item.kategori?.includes('Kuliner');
+    if (poiFilter === 'Transportasi') return item.kategori?.includes('Transportasi') || item.kategori?.includes('Tol') || item.kategori?.includes('Kereta');
     return true;
   });
 
@@ -62,19 +63,19 @@ export default function LocationRules({ kost }) {
             <div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30 mb-3">
                 <Compass className="w-3.5 h-3.5 text-amber-400" />
-                <span>Konektivitas & Akses Jantung Kota</span>
+                <span>Konektivitas & Akses Pendidikan</span>
               </div>
               <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-                Lokasi Emas di Brumbungan, Semarang Tengah
+                {kost?.lokasiJudul || 'Lokasi Strategis di Banyumanik - Tembalang'}
               </h2>
               <p className="mt-2 text-sm text-slate-300 leading-relaxed">
-                Tinggal di pusat denyut aktivitas Kota Semarang. Berjarak hitungan menit ke kawasan bisnis Simpang Lima, pusat perbelanjaan elit, dan pusat layanan medis RS Telogorejo.
+                {kost?.lokasiDeskripsi || 'Kawasan hunian tenang dan asri, hanya hitungan menit ke Kampus UNDIP Tembalang, Polines, RSND, dan akses gerbang tol Banyumanik.'}
               </p>
             </div>
 
             {/* POI Filter Buttons */}
             <div className="flex flex-wrap gap-2 pt-1">
-              {['Semua', 'Mall', 'Kesehatan', 'Transportasi'].map((f) => (
+              {['Semua', 'Kampus', 'Kesehatan', 'Mall & Belanja', 'Transportasi'].map((f) => (
                 <button
                   key={f}
                   onClick={() => setPoiFilter(f)}
@@ -158,8 +159,8 @@ export default function LocationRules({ kost }) {
               {/* Responsive Embedded Map */}
               <div className="w-full h-60 rounded-2xl overflow-hidden border border-slate-800 relative bg-slate-900">
                 <iframe
-                  title="Peta Lokasi BS Residence Exclusive Kost Semarang"
-                  src={kost.googleMapsEmbedUrl || "https://maps.google.com/maps?q=-6.9832496,110.4263105&hl=id&z=16&output=embed"}
+                  title={`Peta Lokasi ${kost?.nama || 'Kost Exclusive D3WI Semarang'}`}
+                  src={kost.googleMapsEmbedUrl || "https://maps.google.com/maps?q=-7.0575995,110.4230222&hl=id&z=16&output=embed"}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

@@ -31,16 +31,16 @@ export default function Navbar({ kost }) {
             <div>
               <div className="flex items-center gap-2">
                 <span className="font-extrabold text-white text-lg sm:text-xl leading-tight tracking-tight group-hover:text-amber-400 transition-colors">
-                  {kost.namaPendek || 'BS Residence'}
+                  {kost?.namaPendek || 'Kost Exclusive D3WI'}
                 </span>
                 <span className="hidden sm:inline-flex items-center text-[10px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/30">
                   Exclusive Kost
                 </span>
               </div>
               <p className="text-xs font-semibold text-slate-400 tracking-wide flex items-center gap-1.5 mt-0.5">
-                <span>Semarang Tengah</span>
+                <span>{kost?.lokasiSingkat || 'Tembalang - Banyumanik'}</span>
                 <span className="text-slate-600">•</span>
-                <span className="text-amber-400/90">3 Mnt Simpang Lima</span>
+                <span className="text-amber-400/90">{kost?.stats?.jarakPusat || '5 Mnt Kampus UNDIP'}</span>
               </p>
             </div>
           </a>

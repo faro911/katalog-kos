@@ -1,36 +1,56 @@
+import React from 'react';
 import { ShieldCheck, Sparkles, MapPin, Car, CheckCircle2 } from 'lucide-react';
 
-export default function Highlights() {
-  const items = [
+const iconMap = {
+  MapPin,
+  Car,
+  ShieldCheck,
+  Sparkles
+};
+
+export default function Highlights({ kost }) {
+  const defaultItems = [
     {
       icon: MapPin,
       color: 'from-amber-500 to-yellow-500',
       tag: 'Lokasi Super Prime',
-      title: '3 Menit ke Simpang Lima',
-      desc: 'Berlokasi di Jl. Brumbungan, Semarang Tengah. Akses kilat menuju pusat perkantoran Simpang Lima, Tentrem Mall, RS Telogorejo, dan kuliner Pecinan tanpa terjebak macet.'
+      title: '5 Menit ke Kampus UNDIP',
+      desc: 'Berlokasi di Banyumanik - Tembalang. Akses kilat ke kampus UNDIP, Polines, RSND, dan pintu gerbang tol Banyumanik tanpa terjebak kemacetan kota.'
     },
     {
       icon: Car,
       color: 'from-emerald-500 to-teal-500',
-      tag: 'Fasilitas Langka',
-      title: 'Parkir Mobil Luas + Free Valet',
-      desc: 'Kenyamanan mobilitas eksekutif: area parkir mobil & motor indoor beratap yang aman di dalam gedung dengan bantuan layanan valet parking gratis dari petugas keamanan.'
+      tag: 'Parkir Nyaman',
+      title: 'Carport Mobil & Parkir Motor Luas',
+      desc: 'Area parkir kendaraan di dalam pagar gedung yang luas, aman, dan terlindung dari cuaca, serta dipantau CCTV 24 jam nonstop.'
     },
     {
       icon: ShieldCheck,
       color: 'from-blue-500 to-indigo-500',
-      tag: 'Keamanan Maksimal',
-      title: 'Security 24 Jam & Smart RFID',
-      desc: 'One-gate system dengan pos security yang berjaga 24 jam penuh, akses pintu kartu RFID mandiri, serta pantauan CCTV di area parkir, lorong, dan lobby bersama.'
+      tag: 'Kebebasan & Aman',
+      title: 'Akses Keluar Masuk Bebas 24 Jam',
+      desc: 'Penghuni memegang akses mandiri bebas jam malam, memberikan kenyamanan maksimal bagi mahasiswa sibuk, dokter residen, maupun pekerja profesional.'
     },
     {
       icon: Sparkles,
       color: 'from-amber-600 to-orange-500',
-      tag: 'Standar Hotel',
-      title: 'Kulkas Pribadi & Water Heater',
-      desc: 'Setiap kamar dilengkapi kulkas pribadi, Smart TV layar lebar, AC Daikin dingin, springbed orthopedic berkualitas hotel, dan kamar mandi dalam dengan water heater hangat.'
+      tag: 'Full Furnished',
+      title: 'Kamar Mandi Dalam & Water Heater',
+      desc: 'Setiap kamar dilengkapi kamar mandi dalam dengan shower air hangat, AC sejuk, Smart TV, kasur springbed empuk, meja kerja, dan lemari pakaian.'
     }
   ];
+
+  const items = (kost?.keunggulan && kost.keunggulan.length > 0)
+    ? kost.keunggulan.map((k, i) => ({
+        icon: iconMap[k.icon] || Sparkles,
+        color: i === 0 ? 'from-amber-500 to-yellow-500' : i === 1 ? 'from-emerald-500 to-teal-500' : i === 2 ? 'from-blue-500 to-indigo-500' : 'from-amber-600 to-orange-500',
+        tag: k.badge || 'Keunggulan',
+        title: k.judul,
+        desc: k.deskripsi
+      }))
+    : defaultItems;
+
+  const namaKos = kost?.namaPendek || 'Kost Exclusive D3WI';
 
   return (
     <section id="keunggulan" className="py-16 md:py-20 bg-slate-950 border-t border-slate-800/80 text-white">
@@ -40,13 +60,13 @@ export default function Highlights() {
         <div className="text-center max-w-3xl mx-auto space-y-3 mb-14">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/10 text-amber-400 border border-amber-500/30">
             <Sparkles className="w-3.5 h-3.5 text-amber-400" />
-            <span>Kenyamanan Eksekutif</span>
+            <span>Kenyamanan Eksklusif</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-            Kenapa Memilih BS Residence Semarang?
+            Kenapa Memilih {namaKos}?
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Standar hunian serviced residence hotel bintang dengan privasi, keamanan, dan lokasi paling strategis di pusat Kota Semarang.
+            Kombinasi hunian modern, lingkungan tenang, fasilitas lengkap, dan aksesibilitas terbaik di Semarang.
           </p>
         </div>
 

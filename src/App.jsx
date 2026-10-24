@@ -28,7 +28,7 @@ export default function App() {
   // Update judul tab browser sesuai kos yang dibuka
   useEffect(() => {
     if (currentKost?.nama) {
-      document.title = `${currentKost.nama} Semarang | 3 Menit ke Simpang Lima & RS Telogorejo`;
+      document.title = `${currentKost.nama} | ${currentKost.stats?.jarakPusat || 'Banyumanik Semarang'}`;
     }
   }, [currentKost]);
 
@@ -44,7 +44,7 @@ export default function App() {
         <Hero kost={currentKost} />
 
         {/* 2. Key Pillars / Highlights */}
-        <Highlights />
+        <Highlights kost={currentKost} />
 
         {/* 3. Room Catalog */}
         <RoomCatalog 

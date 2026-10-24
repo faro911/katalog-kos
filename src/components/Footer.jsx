@@ -74,7 +74,7 @@ export default function Footer({ kost }) {
               Kontak Pengelola & Survei
             </h4>
             <p className="text-xs text-slate-400 leading-relaxed">
-              Ingin menanyakan ketersediaan kamar kosong terbaru atau mengatur jadwal survei unit di Jl. Brumbungan No. 78?
+              Ingin menanyakan ketersediaan kamar kosong terbaru atau mengatur jadwal survei unit di {kost?.alamatSingkat || kost?.alamat || 'Semarang'}?
             </p>
             
             <a
