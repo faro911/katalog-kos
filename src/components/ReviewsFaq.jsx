@@ -20,10 +20,10 @@ export default function ReviewsFaq({ kost }) {
               <span>Pengalaman Nyata Penghuni</span>
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-              Apa Kata Penghuni Tentang {kost?.namaPendek || 'Kost Exclusive D3WI'}?
+              Apa Kata Penghuni Tentang {kost?.namaPendek || "D'resident Suite 5"}?
             </h2>
             <p className="text-sm sm:text-base text-slate-400">
-              Pengalaman nyata dari mahasiswa, dokter residen, dan pekerja profesional yang tinggal di {kost?.namaPendek || 'Kost Exclusive D3WI'}.
+              Pengalaman nyata dari eksekutif, dokter residen, dan profesional yang tinggal di {kost?.namaPendek || "D'resident Suite 5"}.
             </p>
           </div>
 
@@ -76,10 +76,10 @@ export default function ReviewsFaq({ kost }) {
               <span>Pertanyaan yang Sering Diajukan</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-black text-white tracking-tight">
-              Tanya Jawab Seputar {kost?.namaPendek || 'Kost Exclusive D3WI'}
+              Tanya Jawab Seputar {kost?.namaPendek || "D'resident Suite 5"}
             </h2>
             <p className="text-sm text-slate-400">
-              Informasi lengkap seputar tipe kamar, fasilitas carport parkir, akses 24 jam, dan ketentuan sewa.
+              Informasi lengkap seputar tipe suite, fasilitas dapur pribadi (kitchenette), parkir, dan ketentuan sewa.
             </p>
           </div>
 

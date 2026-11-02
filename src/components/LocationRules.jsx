@@ -159,8 +159,8 @@ export default function LocationRules({ kost }) {
               {/* Responsive Embedded Map */}
               <div className="w-full h-60 rounded-2xl overflow-hidden border border-slate-800 relative bg-slate-900">
                 <iframe
-                  title={`Peta Lokasi ${kost?.nama || 'Kost Exclusive D3WI Semarang'}`}
-                  src={kost.googleMapsEmbedUrl || "https://maps.google.com/maps?q=-7.0575995,110.4230222&hl=id&z=16&output=embed"}
+                  title={`Peta Lokasi ${kost?.nama || "Kost Semarang D'resident Suite 5"}`}
+                  src={kost.googleMapsEmbedUrl || "https://maps.google.com/maps?q=-6.9988229,110.4258464&hl=id&z=16&output=embed"}
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

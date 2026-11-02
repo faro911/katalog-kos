@@ -14,29 +14,29 @@ export default function Highlights({ kost }) {
       icon: MapPin,
       color: 'from-amber-500 to-yellow-500',
       tag: 'Lokasi Super Prime',
-      title: '5 Menit ke Kampus UNDIP',
-      desc: 'Berlokasi di Banyumanik - Tembalang. Akses kilat ke kampus UNDIP, Polines, RSND, dan pintu gerbang tol Banyumanik tanpa terjebak kemacetan kota.'
+      title: '3 Menit ke Simpang Lima',
+      desc: 'Berlokasi di Singosari Pleburan, Semarang Selatan. Akses kilat ke Simpang Lima, UNDIP Pleburan, RS Roemani, dan pusat bisnis Jl. Pahlawan.'
+    },
+    {
+      icon: Sparkles,
+      color: 'from-amber-600 to-orange-500',
+      tag: 'Fasilitas Langka',
+      title: 'Unit dengan Private Kitchen',
+      desc: 'Tipe kamar suite dilengkapi dapur pribadi, kompor, kitchen sink, dan meja makan langsung di dalam kamar untuk privasi memasak mandiri.'
     },
     {
       icon: Car,
       color: 'from-emerald-500 to-teal-500',
       tag: 'Parkir Nyaman',
-      title: 'Carport Mobil & Parkir Motor Luas',
-      desc: 'Area parkir kendaraan di dalam pagar gedung yang luas, aman, dan terlindung dari cuaca, serta dipantau CCTV 24 jam nonstop.'
+      title: 'Parkir Mobil & Motor Indoor Aman',
+      desc: 'Area parkir mobil dan motor beratap di dalam pagar gedung yang luas dan aman, dilengkapi pantauan kamera CCTV 24 jam nonstop.'
     },
     {
       icon: ShieldCheck,
       color: 'from-blue-500 to-indigo-500',
       tag: 'Kebebasan & Aman',
       title: 'Akses Keluar Masuk Bebas 24 Jam',
-      desc: 'Penghuni memegang akses mandiri bebas jam malam, memberikan kenyamanan maksimal bagi mahasiswa sibuk, dokter residen, maupun pekerja profesional.'
-    },
-    {
-      icon: Sparkles,
-      color: 'from-amber-600 to-orange-500',
-      tag: 'Full Furnished',
-      title: 'Kamar Mandi Dalam & Water Heater',
-      desc: 'Setiap kamar dilengkapi kamar mandi dalam dengan shower air hangat, AC sejuk, Smart TV, kasur springbed empuk, meja kerja, dan lemari pakaian.'
+      desc: 'Penghuni memegang akses mandiri 24 jam penuh tanpa jam malam kaku, memberikan fleksibilitas bagi mobilitas kerja profesional dan dokter.'
     }
   ];
 
@@ -50,7 +50,7 @@ export default function Highlights({ kost }) {
       }))
     : defaultItems;
 
-  const namaKos = kost?.namaPendek || 'Kost Exclusive D3WI';
+  const namaKos = kost?.namaPendek || "D'resident Suite 5";
 
   return (
     <section id="keunggulan" className="py-16 md:py-20 bg-slate-950 border-t border-slate-800/80 text-white">

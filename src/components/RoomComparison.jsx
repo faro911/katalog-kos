@@ -4,19 +4,19 @@ import { formatRupiah, buatLinkWa } from '../data/kostData';
 
 export default function RoomComparison({ kost }) {
   const specs = [
-    { label: 'Luas Kamar', tipec: '12 m² (3 x 4m)', tipeb: '14 m² (3.5 x 4m)', tipea: '20 m² (4 x 5m)' },
-    { label: 'Tipe Ranjang', tipec: 'Single Bed (120x200)', tipeb: 'Queen Bed (140x200)', tipea: 'Queen Bed (160x200)' },
-    { label: 'AC Pendingin Ruangan', tipec: true, tipeb: true, tipea: 'AC Daikin Inverter' },
-    { label: 'Smart TV Layar Datar', tipec: false, tipeb: true, tipea: true },
-    { label: 'Kulkas Pribadi di Kamar', tipec: false, tipeb: false, tipea: true },
-    { label: 'Kamar Mandi Dalam', tipec: true, tipeb: true, tipea: true },
-    { label: 'Water Heater (Air Hangat)', tipec: false, tipeb: false, tipea: true },
-    { label: 'Kloset Duduk & Shower', tipec: true, tipeb: true, tipea: true },
-    { label: 'Meja Belajar / Kerja', tipec: 'Minimalis', tipeb: 'Meja + Kursi', tipea: 'Workstation Luas' },
-    { label: 'Lemari Pakaian', tipec: 'Standar', tipeb: '2 Pintu', tipea: 'Besar + Cermin' },
-    { label: 'Slot Parkir / Carport', tipec: 'Motor & Mobil', tipeb: 'Motor & Mobil', tipea: 'Prioritas Carport VVIP' },
-    { label: 'Akses Keluar Masuk 24 Jam', tipec: true, tipeb: true, tipea: true },
-    { label: 'Tarif Sewa Bulanan', tipec: formatRupiah(2600000), tipeb: formatRupiah(2850000), tipea: formatRupiah(3650000) },
+    { label: 'Luas Kamar', studio: '14 m² (3.5 x 4m)', deluxe: '18 m² (4 x 4.5m)', executive: '24 m² (4.5 x 5.5m)' },
+    { label: 'Tipe Ranjang', studio: 'Queen (140 x 200)', deluxe: 'Queen (160 x 200)', executive: 'King Bed (180 x 200)' },
+    { label: 'Dapur Pribadi (Kitchenette)', studio: false, deluxe: false, executive: 'Dapur & Sink di Kamar' },
+    { label: 'Kulkas Pribadi di Kamar', studio: 'Kulkas Mini', deluxe: 'Kulkas 1 Pintu', executive: 'Kulkas 2 Pintu / Jumbo' },
+    { label: 'Kamar Mandi Dalam', studio: true, deluxe: true, executive: true },
+    { label: 'Water Heater (Air Hangat)', studio: false, deluxe: true, executive: 'Water Heater Mewah' },
+    { label: 'AC Pendingin Ruangan', studio: true, deluxe: 'AC Daikin', executive: 'AC Daikin 1 PK Inverter' },
+    { label: 'Smart TV Layar Datar', studio: true, deluxe: '32 Inch Smart TV', executive: '43 Inch 4K UHD' },
+    { label: 'Dining Area / Meja Makan', studio: false, deluxe: false, executive: 'Meja Makan Pribadi' },
+    { label: 'Workstation Meja Kerja', studio: 'Meja Minimalis', deluxe: 'Meja Kerja + Kursi', executive: 'Workstation Luas' },
+    { label: 'Parkir Mobil & Motor Indoor', studio: true, deluxe: true, executive: true },
+    { label: 'Akses Keluar Masuk 24 Jam', studio: true, deluxe: true, executive: true },
+    { label: 'Tarif Sewa Bulanan', studio: formatRupiah(2200000), deluxe: formatRupiah(2500000), executive: formatRupiah(2850000) },
   ];
 
   return (
@@ -30,10 +30,10 @@ export default function RoomComparison({ kost }) {
             <span>Tabel Perbandingan Transparan</span>
           </div>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-white tracking-tight">
-            Bandingkan Fasilitas Antar Tipe Kamar
+            Bandingkan Fasilitas Antar Tipe Suite
           </h2>
           <p className="text-sm sm:text-base text-slate-400">
-            Pilih tipe kamar yang paling sesuai dengan kebutuhan ruang, privasi, dan kenyamanan Anda selama di Semarang.
+            Pilih unit kamar yang paling sesuai dengan kebutuhan ruang, privasi memasak mandiri, dan kenyamanan mobilitas Anda di Semarang.
           </p>
         </div>
 
@@ -50,10 +50,10 @@ export default function RoomComparison({ kost }) {
                     Paling Terjangkau
                   </span>
                   <span className="text-base font-black text-white block mt-0.5">
-                    Tipe C (Superior)
+                    Studio Suite
                   </span>
                   <span className="text-sm font-bold text-slate-300 block mt-1">
-                    Rp 2.600.000 <span className="text-xs font-normal text-slate-400">/bln</span>
+                    Rp 2.200.000 <span className="text-xs font-normal text-slate-400">/bln</span>
                   </span>
                 </th>
                 <th className="p-4 sm:p-5 text-center min-w-[220px] bg-amber-500/10 border-x border-amber-500/20">
@@ -61,21 +61,21 @@ export default function RoomComparison({ kost }) {
                     Best Seller / Terpopuler
                   </span>
                   <span className="text-base font-black text-white block mt-0.5">
-                    Tipe B (Deluxe)
+                    Deluxe Suite
                   </span>
                   <span className="text-sm font-bold text-amber-400 block mt-1">
-                    Rp 2.850.000 <span className="text-xs font-normal text-slate-400">/bln</span>
+                    Rp 2.500.000 <span className="text-xs font-normal text-slate-400">/bln</span>
                   </span>
                 </th>
-                <th className="p-4 sm:p-5 text-center min-w-[200px]">
+                <th className="p-4 sm:p-5 text-center min-w-[220px]">
                   <span className="text-xs font-extrabold uppercase tracking-wider text-amber-400 block">
-                    Paling Mewah & Luas
+                    Private Kitchen (Langka)
                   </span>
                   <span className="text-base font-black text-white block mt-0.5">
-                    Tipe A (Suite VVIP)
+                    Executive Suite
                   </span>
                   <span className="text-sm font-bold text-slate-300 block mt-1">
-                    Rp 3.650.000 <span className="text-xs font-normal text-slate-400">/bln</span>
+                    Rp 2.850.000 <span className="text-xs font-normal text-slate-400">/bln</span>
                   </span>
                 </th>
               </tr>
@@ -87,42 +87,42 @@ export default function RoomComparison({ kost }) {
                     {row.label}
                   </td>
                   
-                  {/* Tipe C */}
+                  {/* Studio */}
                   <td className="p-4 sm:p-5 text-center text-slate-300">
-                    {typeof row.tipec === 'boolean' ? (
-                      row.tipec ? (
+                    {typeof row.studio === 'boolean' ? (
+                      row.studio ? (
                         <Check className="w-5 h-5 text-emerald-400 mx-auto" />
                       ) : (
                         <X className="w-5 h-5 text-slate-600 mx-auto" />
                       )
                     ) : (
-                      <span className="font-bold">{row.tipec}</span>
+                      <span className="font-bold">{row.studio}</span>
                     )}
                   </td>
 
-                  {/* Tipe B (Highlighted Column) */}
+                  {/* Deluxe (Highlighted Column) */}
                   <td className="p-4 sm:p-5 text-center text-white bg-amber-500/5 border-x border-amber-500/20 font-bold">
-                    {typeof row.tipeb === 'boolean' ? (
-                      row.tipeb ? (
+                    {typeof row.deluxe === 'boolean' ? (
+                      row.deluxe ? (
                         <Check className="w-5 h-5 text-amber-400 mx-auto" />
                       ) : (
                         <X className="w-5 h-5 text-slate-600 mx-auto" />
                       )
                     ) : (
-                      <span className="text-amber-300 font-extrabold">{row.tipeb}</span>
+                      <span className="text-amber-300 font-extrabold">{row.deluxe}</span>
                     )}
                   </td>
 
-                  {/* Tipe A */}
+                  {/* Executive with Private Kitchen */}
                   <td className="p-4 sm:p-5 text-center text-slate-300">
-                    {typeof row.tipea === 'boolean' ? (
-                      row.tipea ? (
+                    {typeof row.executive === 'boolean' ? (
+                      row.executive ? (
                         <Check className="w-5 h-5 text-emerald-400 mx-auto" />
                       ) : (
                         <X className="w-5 h-5 text-slate-600 mx-auto" />
                       )
                     ) : (
-                      <span className="font-bold text-white">{row.tipea}</span>
+                      <span className="font-bold text-white">{row.executive}</span>
                     )}
                   </td>
                 </tr>
@@ -133,34 +133,34 @@ export default function RoomComparison({ kost }) {
                 <td className="p-4 sm:p-5 font-bold text-slate-400">Aksi Booking</td>
                 <td className="p-4 sm:p-5 text-center">
                   <a
-                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Tipe C - Superior Standard')}
+                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Studio Suite Room')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all border border-slate-700"
                   >
-                    <span>Pilih Tipe C</span>
+                    <span>Pilih Studio</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </td>
                 <td className="p-4 sm:p-5 text-center bg-amber-500/10 border-x border-amber-500/20">
                   <a
-                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Tipe B - Deluxe Room')}
+                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Deluxe Suite Room')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl bg-gradient-to-r from-amber-500 to-yellow-400 text-slate-950 text-xs font-black shadow-md shadow-amber-500/20 hover:from-amber-400 hover:to-yellow-300 transition-all"
                   >
-                    <span>Pilih Tipe B</span>
+                    <span>Pilih Deluxe</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </td>
                 <td className="p-4 sm:p-5 text-center">
                   <a
-                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Tipe A - Suite VVIP')}
+                    href={buatLinkWa(kost?.whatsapp, kost?.nama, 'Executive Suite with Private Kitchen')}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold transition-all border border-slate-700"
                   >
-                    <span>Pilih Tipe A</span>
+                    <span>Pilih Executive</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </a>
                 </td>

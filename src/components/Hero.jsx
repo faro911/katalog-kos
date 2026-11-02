@@ -16,23 +16,23 @@ export default function Hero({ kost }) {
   const heroImages = [
     {
       url: "https://images.unsplash.com/photo-1616486338812-3dadae4b4ace?q=80&w=1200&auto=format&fit=crop",
-      title: "Tipe A - Suite VVIP Room",
-      label: "Full AC, Water Heater, TV & Kulkas"
+      title: "Executive Suite (Private Kitchen)",
+      label: "Full AC, Dapur Pribadi, TV & Water Heater"
     },
     {
       url: "https://images.unsplash.com/photo-1590490360182-c33d57733427?q=80&w=1200&auto=format&fit=crop",
-      title: "Tipe B - Deluxe Room",
-      label: "KM Dalam, AC Dingin, Smart TV"
+      title: "Deluxe Suite Room",
+      label: "KM Dalam Water Heater, AC & Kulkas"
     },
     {
       url: "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?q=80&w=1200&auto=format&fit=crop",
-      title: "Tipe C - Superior Standard",
-      label: "Hemat, Bersih, Nyaman & Full Furnished"
+      title: "Studio Suite Room",
+      label: "Kamar Nyaman, AC, Kulkas & Full Furnished"
     },
     {
       url: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a?q=80&w=1200&auto=format&fit=crop",
-      title: "Carport Mobil & Parkir Motor Indoor",
-      label: "Aman di Dalam Gerbang & CCTV 24 Jam"
+      title: "Parkir Mobil & Motor Indoor Aman",
+      label: "Di Dalam Pagar Beratap & CCTV 24 Jam"
     }
   ];
 
@@ -89,15 +89,15 @@ export default function Hero({ kost }) {
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-2 pt-1">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                <span>5 Mnt ke Kampus UNDIP</span>
+                <span>3 Mnt ke Simpang Lima</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Clock className="w-3.5 h-3.5 text-amber-400" />
-                <span>6 Mnt ke Gerbang Tol</span>
+                <span>2 Mnt ke UNDIP Pleburan</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <Car className="w-3.5 h-3.5 text-amber-400" />
-                <span>Carport Mobil & Motor</span>
+                <span>Parkir Mobil & Motor</span>
               </div>
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900/90 border border-slate-800 text-xs font-semibold text-slate-300">
                 <ShieldCheck className="w-3.5 h-3.5 text-amber-400" />
@@ -246,13 +246,13 @@ export default function Hero({ kost }) {
           </div>
 
           <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-inner">
-            <p className="text-2xl sm:text-3xl font-black text-white">{kost.stats?.kecepatanWifi || '100 Mbps'}</p>
+            <p className="text-2xl sm:text-3xl font-black text-white">{kost.stats?.kecepatanWifi || '150 Mbps'}</p>
             <p className="text-xs font-semibold text-slate-400 mt-0.5">Wi-Fi Fiber Dedicated</p>
           </div>
 
           <div className="p-4 rounded-2xl bg-slate-900/80 border border-slate-800 shadow-inner">
-            <p className="text-2xl sm:text-3xl font-black text-white">5 Mnt</p>
-            <p className="text-xs font-semibold text-slate-400 mt-0.5">Ke Kampus UNDIP Tembalang</p>
+            <p className="text-2xl sm:text-3xl font-black text-white">2 - 3 Mnt</p>
+            <p className="text-xs font-semibold text-slate-400 mt-0.5">Ke Simpang Lima & UNDIP Pleburan</p>
           </div>
         </div>
 
